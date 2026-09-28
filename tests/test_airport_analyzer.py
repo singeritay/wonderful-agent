@@ -105,7 +105,7 @@ def test_get_congestion_worked_example():
     assert report.capacity_per_hour == 40
     assert report.total_flights == 10
     assert report.peak_hour_average_flights_per_hour == 10
-    assert report.utilization_pct == 25.0
+    assert report.utilization_percent == 25.0
     assert report.congestion_level == "low"
 
 
@@ -135,7 +135,7 @@ def test_get_congestion_zero_runways_is_unknown():
 
     report = analyzer.get_congestion()
 
-    assert report.utilization_pct is None
+    assert report.utilization_percent is None
     assert report.congestion_level == "unknown"
     assert any("0 open runways" in a for a in report.assumptions)
 
@@ -185,37 +185,9 @@ def test_get_capacity_unknown_when_no_runways():
     assert report.practical_capacity_per_hour is None
 
 
-def test_get_flights_count_departures():
-    airport = Airport(code="KBOS", name="Boston Logan", region="US-MA", num_of_runways=2)
-    analyzer, flights_api = make_analyzer(
-        airport,
-        get_departures=lambda code, begin, end: [make_flight(begin) for _ in range(3)],
-    )
-
-    report = analyzer.get_flights_count(Direction.DEPARTURES)
-
-    assert report.direction == Direction.DEPARTURES
-    assert report.total == 3
-    flights_api.get_arrivals.assert_not_called()
-
-
-def test_get_flights_count_arrivals():
-    airport = Airport(code="KBOS", name="Boston Logan", region="US-MA", num_of_runways=2)
-    analyzer, flights_api = make_analyzer(
-        airport,
-        get_arrivals=lambda code, begin, end: [make_flight(begin) for _ in range(5)],
-    )
-
-    report = analyzer.get_flights_count(Direction.ARRIVALS)
-
-    assert report.direction == Direction.ARRIVALS
-    assert report.total == 5
-    flights_api.get_departures.assert_not_called()
-
-
-def test_get_flights_count_long_haul_departures():
+def test_get_flights_count_departures_includes_long_haul_count_from_one_fetch():
     airport = Airport(code="PANC", name="Anchorage", region="US-AK", num_of_runways=3)
-    analyzer, _ = make_analyzer(
+    analyzer, flights_api = make_analyzer(
         airport,
         get_departures=lambda code, begin, end: [
             make_flight(begin, begin + timedelta(hours=6)),  # long haul
@@ -224,24 +196,31 @@ def test_get_flights_count_long_haul_departures():
         settings=make_settings(min_duration_hours=5),
     )
 
-    report = analyzer.get_flights_count(Direction.DEPARTURES, long_haul=True)
+    report = analyzer.get_flights_count(Direction.DEPARTURES)
 
     assert report.direction == Direction.DEPARTURES
+    assert report.total == 2
     assert report.long_haul_count == 1
     assert report.min_duration_hours == 5
+    flights_api.get_departures.assert_called_once()
+    flights_api.get_arrivals.assert_not_called()
 
 
-def test_get_flights_count_long_haul_arrivals():
+def test_get_flights_count_arrivals_includes_long_haul_count_from_one_fetch():
     airport = Airport(code="PANC", name="Anchorage", region="US-AK", num_of_runways=3)
-    analyzer, _ = make_analyzer(
+    analyzer, flights_api = make_analyzer(
         airport,
         get_arrivals=lambda code, begin, end: [
             make_flight(begin, begin + timedelta(hours=6)),  # long haul
+            make_flight(begin, begin + timedelta(hours=2)),  # short haul
         ],
         settings=make_settings(min_duration_hours=5),
     )
 
-    report = analyzer.get_flights_count(Direction.ARRIVALS, long_haul=True)
+    report = analyzer.get_flights_count(Direction.ARRIVALS)
 
     assert report.direction == Direction.ARRIVALS
+    assert report.total == 2
     assert report.long_haul_count == 1
+    flights_api.get_arrivals.assert_called_once()
+    flights_api.get_departures.assert_not_called()

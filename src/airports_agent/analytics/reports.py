@@ -16,7 +16,7 @@ class CongestionReport(BaseModel):
     average_flights_per_hour: float
     peak_hour_average_flights_per_hour: float
     capacity_per_hour: int
-    utilization_pct: Optional[float]
+    utilization_percent: Optional[float]
     congestion_level: CongestionLevel
     assumptions: List[str]
 
@@ -27,14 +27,6 @@ class FlightCountReport(BaseModel):
     window_end: datetime
     direction: Direction
     total: int
-    assumptions: List[str]
-
-
-class LongHaulFlightCountReport(BaseModel):
-    airport: Airport
-    window_start: datetime
-    window_end: datetime
-    direction: Direction
     long_haul_count: int
     min_duration_hours: float
     assumptions: List[str]
@@ -57,11 +49,3 @@ class FlightsCountResult(BaseModel):
 
     departures: Optional[FlightCountReport] = None
     arrivals: Optional[FlightCountReport] = None
-
-
-class LongHaulFlightsCountResult(BaseModel):
-    """Bundles per-direction LongHaulFlightCountReports. A direction is omitted (None) when the
-    caller asked for only the other direction."""
-
-    departures: Optional[LongHaulFlightCountReport] = None
-    arrivals: Optional[LongHaulFlightCountReport] = None

@@ -1,6 +1,6 @@
 import io
 from datetime import date
-from typing import List, Optional
+from typing import List, Optional, Union
 
 import pandas as pd
 import requests
@@ -37,10 +37,11 @@ class AirportsAPI:
     def __init__(self, base_url:str =BASE_URL):
         self.base_url = base_url
 
-    def get_airports_per_region(self, region: str) -> List[Airport]:
+    def get_airports_per_region(self, region: Union[str, List[str]]) -> List[Airport]:
         airports = self._get_airports()
         runways = self._get_runways()
-        matches = airports[airports["iso_region"] == region]
+        regions = [region] if isinstance(region, str) else region
+        matches = airports[airports["iso_region"].isin(regions)]
         return [self._to_airport(row, runways) for _, row in matches.iterrows()]
 
     def get_airport_by_code(self, code: str) -> Airport:
