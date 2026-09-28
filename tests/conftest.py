@@ -26,6 +26,9 @@ def _install_opensky_api_stub():
         def get_departures_by_airport(self, *args, **kwargs):
             return []
 
+        def get_arrivals_by_airport(self, *args, **kwargs):
+            return []
+
     stub.FlightData = FlightData
     stub.OpenSkyApi = OpenSkyApi
     sys.modules["opensky_api"] = stub
