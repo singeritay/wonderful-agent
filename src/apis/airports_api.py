@@ -20,6 +20,10 @@ AIRPORTS_FILE = DATA_DIR / "airports.csv"
 RUNWAYS_FILE = DATA_DIR / "runways.csv"
 
 
+class AirportNotFoundError(Exception):
+    pass
+
+
 class Airport(BaseModel):
     code: str
     name: str
@@ -39,21 +43,20 @@ class AirportsAPI:
         matches = airports[airports["iso_region"] == region]
         return [self._to_airport(row, runways) for _, row in matches.iterrows()]
 
-    def get_airport_by_code(self, code: str) -> Optional[Airport]:
+    def get_airport_by_code(self, code: str) -> Airport:
         airports = self._get_airports()
         matches = airports[airports["ident"] == code]
         if matches.empty:
-            return None
+            raise AirportNotFoundError(f"No airport found for code '{code}'")
         return self._to_airport(matches.iloc[0], self._get_runways())
 
-    def get_airport_by_name(self, name: str) -> Optional[Airport]:
+    def get_airport_by_name(self, name: str) -> Airport:
         airports = self._get_airports()
         matches = airports[airports["name"] == name]
         if matches.empty:
-            return None
+            raise AirportNotFoundError(f"No airport found for name '{name}'")
         return self._to_airport(matches.iloc[0], self._get_runways())
 
-    #CR: this function is too long, consider breaking it into smaller functions
     def search_airports(self, query: str) -> List[Airport]:
         query = query.strip()
         if not query:
@@ -61,20 +64,23 @@ class AirportsAPI:
 
         airports = self._get_airports()
         runways = self._get_runways()
-        query_upper = query.upper()
 
-        exact = airports[
+        exact = self._exact_matches(airports, query)
+        matches = exact if not exact.empty else self._fuzzy_matches(airports, query)
+        return [self._to_airport(row, runways) for _, row in matches.iterrows()]
+
+    def _exact_matches(self, airports: pd.DataFrame, query: str) -> pd.DataFrame:
+        query_upper = query.upper()
+        return airports[
             (airports["ident"].str.upper() == query_upper)
             | (airports["iata_code"].astype(str).str.upper() == query_upper)
         ]
-        if not exact.empty:
-            return [self._to_airport(row, runways) for _, row in exact.iterrows()]
 
-        fuzzy = airports[
+    def _fuzzy_matches(self, airports: pd.DataFrame, query: str) -> pd.DataFrame:
+        return airports[
             airports["name"].str.contains(query, case=False, regex=False, na=False)
             | airports["municipality"].astype(str).str.contains(query, case=False, regex=False, na=False)
         ]
-        return [self._to_airport(row, runways) for _, row in fuzzy.iterrows()]
 
     def _get_airports(self) -> Optional[pd.DataFrame]:
         if self._is_up_to_date(AIRPORTS_FILE):
@@ -119,18 +125,14 @@ class AirportsAPI:
         )
         return len(airport_runways[~is_helipad])
 
-    #CR: change this function name, or delete it and implement the logic in _to_airport directly, since it is only used there
-    def _clean(self, value) -> Optional[str]:
-        return None if pd.isna(value) else str(value)
-
     def _to_airport(self, row: pd.Series, runways: pd.DataFrame) -> Airport:
         return Airport(
             code=row["ident"],
             name=row["name"],
             region=row["iso_region"],
             num_of_runways=self._count_runways(row["ident"], runways),
-            iata_code=self._clean(row["iata_code"]),
-            municipality=self._clean(row["municipality"]),
+            iata_code=None if pd.isna(row["iata_code"]) else str(row["iata_code"]),
+            municipality=None if pd.isna(row["municipality"]) else str(row["municipality"]),
         )
 
 

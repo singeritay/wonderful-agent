@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from apis import airports_api as airports_api_module
-from apis.airports_api import Airport, AirportsAPI
+from apis.airports_api import Airport, AirportNotFoundError, AirportsAPI
 
 AIRPORTS_CSV = (
     "id,ident,type,name,iso_country,iso_region,iata_code,municipality\n"
@@ -80,13 +80,16 @@ def test_get_airport_by_code_counts_only_open_runways(api, mock_get):
 
 def test_get_airport_by_code_not_found(api, mock_get):
     mock_get()
-    assert api.get_airport_by_code("ZZZZ") is None
+    with pytest.raises(AirportNotFoundError):
+        api.get_airport_by_code("ZZZZ")
 
 
 def test_get_airport_by_code_excludes_filtered_airports(api, mock_get):
     mock_get()
-    assert api.get_airport_by_code("KXYZ") is None
-    assert api.get_airport_by_code("EGLL") is None
+    with pytest.raises(AirportNotFoundError):
+        api.get_airport_by_code("KXYZ")
+    with pytest.raises(AirportNotFoundError):
+        api.get_airport_by_code("EGLL")
 
 
 def test_get_airport_by_name_found(api, mock_get):
@@ -97,7 +100,8 @@ def test_get_airport_by_name_found(api, mock_get):
 
 def test_get_airport_by_name_not_found(api, mock_get):
     mock_get()
-    assert api.get_airport_by_name("Nonexistent") is None
+    with pytest.raises(AirportNotFoundError):
+        api.get_airport_by_name("Nonexistent")
 
 
 def test_get_airports_per_region_filters_type_and_country(api, mock_get):

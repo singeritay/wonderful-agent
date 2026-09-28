@@ -1,11 +1,12 @@
 from datetime import datetime, time, timedelta, timezone
 from enum import Enum
+import json
 import os
 from typing import List, Optional
 
 from dotenv import load_dotenv
 from opensky_api import FlightData, OpenSkyApi
-from pydantic import BaseModel, TypeAdapter
+from pydantic import BaseModel
 
 from airports_agent.settings.settings import load_settings
 
@@ -27,8 +28,6 @@ class Flight(BaseModel):
     departure_time: datetime
     arrival_time: datetime
 
-#CR: why do we need a TypeAdapter? seems like it confuses more than it helps.
-FLIGHTS_LIST_ADAPTER = TypeAdapter(List[Flight])
 FLIGHTS_CACHE_DIR = load_settings().data_dir_path / "flights"
 
 
@@ -65,31 +64,28 @@ class FlightsAPI:
     ) -> List[Flight]:
         cache_path = self._get_cache_path_for_window(direction, airport_icao, window_start, window_end)
         if cache_path is not None and cache_path.exists():
-            return FLIGHTS_LIST_ADAPTER.validate_json(cache_path.read_bytes())
+            return [Flight.model_validate(item) for item in json.loads(cache_path.read_text())]
 
         records = self._fetch_records(direction, airport_icao, window_start, window_end)
         flights = [self._to_flight(record) for record in records]
 
         if cache_path is not None:
             cache_path.parent.mkdir(parents=True, exist_ok=True)
-            cache_path.write_bytes(FLIGHTS_LIST_ADAPTER.dump_json(flights))
+            cache_path.write_text(json.dumps([f.model_dump(mode="json") for f in flights]))
 
         return flights
 
     def _fetch_records(
         self, direction: Direction, airport_icao: str, window_start: datetime, window_end: datetime
     ) -> List[FlightData]:
-        #CR: this syntax is weird and doesn't help much. just use simple if else statements.
-        method = (
-            self._api.get_departures_by_airport
-            if direction is Direction.DEPARTURES
-            else self._api.get_arrivals_by_airport
-        )
-        records = method(
-            airport_icao,
-            int(window_start.timestamp()),
-            int(window_end.timestamp()),
-        )
+        if direction is Direction.DEPARTURES:
+            records = self._api.get_departures_by_airport(
+                airport_icao, int(window_start.timestamp()), int(window_end.timestamp())
+            )
+        else:
+            records = self._api.get_arrivals_by_airport(
+                airport_icao, int(window_start.timestamp()), int(window_end.timestamp())
+            )
         return records or []
 
     def _get_cache_path_for_window(
