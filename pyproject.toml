@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "google-genai>=2.25.0",
     "mcp<2",
     "opensky-api @ git+https://github.com/openskynetwork/opensky-api.git#subdirectory=python",
     "pandas>=2.0",

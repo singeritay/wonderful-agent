@@ -132,7 +132,7 @@ def get_airport_capacity(airport_code: str) -> CapacityReport:
     Returns `capacity_per_hour` (theoretical max, from runway count), `practical_capacity_per_
     hour` (a configured percentage of theoretical - the realistic sustainable ceiling),
     `average_flights_per_hour` (actual observed average) and `peak_hour_average_flights_per_hour`
-    (actual observed peak). This tool deliberately does NOT conclude "over capacity" itself -
+    (actual observed average at peak hours). This tool deliberately does NOT conclude "over capacity" itself -
     compare the observed numbers against both capacity figures and explain your reasoning.
     Always surface `assumptions`.
     """

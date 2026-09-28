@@ -19,4 +19,4 @@ unmet_demand:
   practical_capacity_pct: 85
 
 llm:
-  model: gemini-3.8-flash
+  model: gemini-3.5-flash-lite
