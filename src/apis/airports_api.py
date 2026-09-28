@@ -11,8 +11,9 @@ from airports_agent.settings.settings import load_settings
 BASE_URL = "https://davidmegginson.github.io/ourairports-data"
 UNITED_STATES_COUNTRY_CODE = "US"
 REQUIRED_AIRPORT_TYPES = ("large_airport", "medium_airport")
-AIRPORTS_COLUMNS = ["id", "ident", "type", "name", "iso_region"]
-RUNWAYS_COLUMNS = ["id", "airport_ref", "airport_ident", "closed"]
+HELIPAD_RUNWAY_PREFIX = "H"
+AIRPORTS_COLUMNS = ["id", "ident", "type", "name", "iso_region", "iata_code", "municipality"]
+RUNWAYS_COLUMNS = ["id", "airport_ref", "airport_ident", "closed", "le_ident"]
 DATA_DIR = load_settings().data_dir_path
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 AIRPORTS_FILE = DATA_DIR / "airports.csv"
@@ -24,6 +25,8 @@ class Airport(BaseModel):
     name: str
     region: str
     num_of_runways: int
+    iata_code: Optional[str] = None
+    municipality: Optional[str] = None
 
 
 class AirportsAPI:
@@ -35,7 +38,7 @@ class AirportsAPI:
         runways = self._get_runways()
         matches = airports[airports["iso_region"] == region]
         return [self._to_airport(row, runways) for _, row in matches.iterrows()]
-    
+
     def get_airport_by_code(self, code: str) -> Optional[Airport]:
         airports = self._get_airports()
         matches = airports[airports["ident"] == code]
@@ -49,7 +52,30 @@ class AirportsAPI:
         if matches.empty:
             return None
         return self._to_airport(matches.iloc[0], self._get_runways())
-    
+
+    #CR: this function is too long, consider breaking it into smaller functions
+    def search_airports(self, query: str) -> List[Airport]:
+        query = query.strip()
+        if not query:
+            return []
+
+        airports = self._get_airports()
+        runways = self._get_runways()
+        query_upper = query.upper()
+
+        exact = airports[
+            (airports["ident"].str.upper() == query_upper)
+            | (airports["iata_code"].astype(str).str.upper() == query_upper)
+        ]
+        if not exact.empty:
+            return [self._to_airport(row, runways) for _, row in exact.iterrows()]
+
+        fuzzy = airports[
+            airports["name"].str.contains(query, case=False, regex=False, na=False)
+            | airports["municipality"].astype(str).str.contains(query, case=False, regex=False, na=False)
+        ]
+        return [self._to_airport(row, runways) for _, row in fuzzy.iterrows()]
+
     def _get_airports(self) -> Optional[pd.DataFrame]:
         if self._is_up_to_date(AIRPORTS_FILE):
             return pd.read_csv(AIRPORTS_FILE)
@@ -65,7 +91,7 @@ class AirportsAPI:
             return airports
         else:
             response.raise_for_status()
-    
+
     def _get_runways(self) -> Optional[pd.DataFrame]:
         if self._is_up_to_date(RUNWAYS_FILE):
             return pd.read_csv(RUNWAYS_FILE)
@@ -77,7 +103,7 @@ class AirportsAPI:
             return runways
         else:
             response.raise_for_status()
-    
+
     def _is_up_to_date(self, path):
         if not path.exists():
             return False
@@ -85,11 +111,17 @@ class AirportsAPI:
         return last_modified == date.today()
 
     def _count_runways(self, airport_code: str, runways: pd.DataFrame) -> int:
-        return len(
-            runways[
-                (runways["airport_ident"] == airport_code) & (runways["closed"] == 0)
-            ]
+        airport_runways = runways[
+            (runways["airport_ident"] == airport_code) & (runways["closed"] == 0)
+        ]
+        is_helipad = (
+            airport_runways["le_ident"].astype(str).str.upper().str.startswith(HELIPAD_RUNWAY_PREFIX)
         )
+        return len(airport_runways[~is_helipad])
+
+    #CR: change this function name, or delete it and implement the logic in _to_airport directly, since it is only used there
+    def _clean(self, value) -> Optional[str]:
+        return None if pd.isna(value) else str(value)
 
     def _to_airport(self, row: pd.Series, runways: pd.DataFrame) -> Airport:
         return Airport(
@@ -97,9 +129,11 @@ class AirportsAPI:
             name=row["name"],
             region=row["iso_region"],
             num_of_runways=self._count_runways(row["ident"], runways),
+            iata_code=self._clean(row["iata_code"]),
+            municipality=self._clean(row["municipality"]),
         )
 
-    
+
 
 if __name__ == "__main__":
     api = AirportsAPI()

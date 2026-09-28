@@ -1,0 +1,145 @@
+from datetime import datetime, timedelta, timezone
+
+from apis.flights_api import Flight
+from airports_agent.analytics import metrics
+
+
+def dt(hour, minute=0, day=1):
+    return datetime(2026, 1, day, hour, minute, tzinfo=timezone.utc)
+
+
+def make_flight(departure_time, arrival_time):
+    return Flight(
+        id="abc123",
+        call_sign="UAL123",
+        departure_airport_code="KBOS",
+        arrival_airport_code="KJFK",
+        departure_time=departure_time,
+        arrival_time=arrival_time,
+    )
+
+
+# --- hourly_counts ---
+
+def test_hourly_counts_buckets_by_hour():
+    times = [dt(8, 5), dt(8, 40), dt(9, 0), dt(8, 59)]
+    counts = metrics.count_flights_by_hour(times)
+    assert counts == {dt(8): 3, dt(9): 1}
+
+
+def test_hourly_counts_empty():
+    assert metrics.count_flights_by_hour([]) == {}
+
+
+# --- peak_hour_average ---
+
+def test_peak_hour_average_sparse_hours_pad_with_zero():
+    # Single day, only 2 hours have flights, but peak_hours_per_day=3
+    hourly = {dt(8): 30, dt(9): 10}
+    # top 3 of [30, 10, 0] = 40 / 3 per day, / 1 window day
+    avg = metrics.peak_hour_average(hourly, window_days=1, peak_hours_per_day=3)
+    assert avg == (30 + 10 + 0) / 3
+
+
+def test_peak_hour_average_missing_day_counts_as_zero():
+    # 3-day window, flights only on day 1
+    hourly = {dt(8, day=1): 30, dt(9, day=1): 30, dt(10, day=1): 30}
+    avg = metrics.peak_hour_average(hourly, window_days=3, peak_hours_per_day=3)
+    # day 1 peak avg = 30; days 2 and 3 contribute 0
+    assert avg == 30 / 3
+
+
+def test_peak_hour_average_no_data():
+    assert metrics.peak_hour_average({}, window_days=3, peak_hours_per_day=3) == 0.0
+
+
+# --- average_per_hour ---
+
+def test_average_per_hour():
+    assert metrics.average_per_hour(total_flights=240, window_days=2) == 5.0
+
+
+def test_average_per_hour_zero_window():
+    assert metrics.average_per_hour(total_flights=10, window_days=0) == 0.0
+
+
+# --- capacity_per_hour ---
+
+def test_capacity_per_hour():
+    assert metrics.capacity_per_hour(runways=2, per_runway=20) == 40
+
+
+# --- utilization_pct ---
+
+def test_utilization_pct_worked_example():
+    # 2 runways, 10 flights/hour -> 10 / 40 = 25%
+    capacity = metrics.capacity_per_hour(runways=2, per_runway=20)
+    assert metrics.utilization_percent(10, capacity) == 25.0
+
+
+def test_utilization_pct_zero_capacity_is_none():
+    assert metrics.utilization_percent(10, 0) is None
+
+
+# --- congestion_level ---
+
+def test_congestion_level_worked_example_is_low():
+    assert metrics.congestion_level(25.0, low_below=50, moderate_below=80, high_up_to=100) == "low"
+
+
+def test_congestion_level_none_is_unknown():
+    assert metrics.congestion_level(None, low_below=50, moderate_below=80, high_up_to=100) == "unknown"
+
+
+def test_congestion_level_boundaries():
+    levels = dict(low_below=50, moderate_below=80, high_up_to=100)
+    assert metrics.congestion_level(49.99, **levels) == "low"
+    assert metrics.congestion_level(50, **levels) == "moderate"
+    assert metrics.congestion_level(79.99, **levels) == "moderate"
+    assert metrics.congestion_level(80, **levels) == "high"
+    assert metrics.congestion_level(100, **levels) == "high"
+    assert metrics.congestion_level(100.01, **levels) == "over_capacity"
+
+
+# --- long_haul_share ---
+
+def test_long_haul_share_worked_example():
+    flights = [
+        make_flight(dt(0), dt(0) + timedelta(hours=6)),  # long haul
+        make_flight(dt(0), dt(0) + timedelta(hours=2)),  # short haul
+    ]
+    count, total, pct = metrics.long_haul_share(flights, min_hours=5)
+    assert (count, total, pct) == (1, 2, 50.0)
+
+
+def test_long_haul_share_threshold_is_exclusive():
+    flights = [make_flight(dt(0), dt(0) + timedelta(hours=5))]  # exactly 5h
+    count, total, pct = metrics.long_haul_share(flights, min_hours=5)
+    assert (count, total, pct) == (0, 1, 0.0)
+
+    flights = [make_flight(dt(0), dt(0) + timedelta(hours=5, minutes=1))]  # just over 5h
+    count, total, pct = metrics.long_haul_share(flights, min_hours=5)
+    assert (count, total, pct) == (1, 1, 100.0)
+
+
+def test_long_haul_share_no_flights():
+    assert metrics.long_haul_share([], min_hours=5) == (0, 0, 0.0)
+
+
+# --- unmet_demand ---
+
+def test_unmet_demand_unknown_capacity():
+    assert metrics.unmet_demand({dt(8): 10}, capacity=0, practical_pct=85) == (0, 0.0, 0)
+
+
+def test_unmet_demand_no_active_hours():
+    assert metrics.unmet_demand({}, capacity=40, practical_pct=85) == (0, 0.0, 0)
+
+
+def test_unmet_demand_counts_hours_at_or_above_practical_capacity():
+    # capacity=40, practical=85% -> practical_capacity=34
+    hourly = {dt(8): 40, dt(9): 34, dt(10): 33, dt(11): 5}
+    hours_above, pct_active, excess = metrics.unmet_demand(hourly, capacity=40, practical_pct=85)
+    assert hours_above == 2  # hours with 40 and 34
+    assert pct_active == 50.0  # 2 of 4 active hours
+    assert excess == 6  # (40-34) + (34-34) = 6 + 0
