@@ -1,0 +1,919 @@
+id,ident,type,name,iso_region
+6924,07FA,medium_airport,Ocean Reef Club Airport,US-FL
+12243,5A8,medium_airport,Aleknagik / New Airport,US-AK
+18945,K61B,medium_airport,Boulder City Municipal Airport,US-NV
+18966,K67L,medium_airport,Mesquite Airport,US-NV
+19033,K76F,medium_airport,Van Zandt County Regional Airport,US-TX
+19042,K79J,medium_airport,South Alabama Regional At Bill Benton Field Airport,US-AL
+3356,KABE,medium_airport,Lehigh Valley International Airport,US-PA
+3357,KABI,medium_airport,Abilene Regional Airport,US-TX
+16091,KABQ,large_airport,Albuquerque International Sunport,US-NM
+3358,KABR,medium_airport,Aberdeen Regional Airport,US-SD
+3359,KABY,medium_airport,Southwest Georgia Regional Airport,US-GA
+3360,KACK,medium_airport,Nantucket Memorial Airport,US-MA
+3361,KACT,medium_airport,Waco Regional Airport,US-TX
+3362,KACV,medium_airport,California Redwood Coast-Humboldt County Airport,US-CA
+3363,KACY,medium_airport,Atlantic City International Airport,US-NJ
+19235,KADH,medium_airport,Ada Regional Airport,US-OK
+3364,KADW,medium_airport,Joint Base Andrews,US-MD
+19242,KAEG,medium_airport,Double Eagle II Airport,US-NM
+3365,KAEX,medium_airport,Alexandria International Airport,US-LA
+3366,KAFW,medium_airport,Perot Field/Fort Worth Alliance Airport,US-TX
+3367,KAGC,medium_airport,Allegheny County Airport,US-PA
+3368,KAGS,medium_airport,Augusta Regional At Bush Field,US-GA
+3369,KAHN,medium_airport,Athens Ben Epps Airport,US-GA
+19257,KAIA,medium_airport,Alliance Municipal Airport,US-NE
+3370,KAKR,medium_airport,Akron Fulton International Airport,US-OH
+3371,KALB,large_airport,Albany International Airport,US-NY
+3372,KALI,medium_airport,Alice International Airport,US-TX
+3373,KALM,medium_airport,Alamogordo White Sands Regional Airport,US-NM
+3374,KALN,medium_airport,St Louis Regional Airport,US-IL
+3375,KALO,medium_airport,Waterloo Regional Airport,US-IA
+19275,KALS,medium_airport,San Luis Valley Regional Airport/Bergman Field,US-CO
+3376,KALW,medium_airport,Walla Walla Regional Airport,US-WA
+3377,KAMA,medium_airport,Rick Husband Amarillo International Airport,US-TX
+3378,KANB,medium_airport,Anniston Regional Airport,US-AL
+3379,KAND,medium_airport,Anderson Regional Airport,US-SC
+3380,KAOO,medium_airport,Altoona Blair County Airport,US-PA
+19291,KAPA,medium_airport,Centennial Airport,US-CO
+19293,KAPF,medium_airport,Naples Municipal Airport,US-FL
+3381,KAPG,medium_airport,Phillips Army Air Field,US-MD
+3382,KAPN,medium_airport,Alpena County Regional Airport,US-MI
+19301,KARA,medium_airport,Acadiana Regional Airport,US-LA
+3383,KART,medium_airport,Watertown International Airport,US-NY
+19308,KASE,medium_airport,Aspen-Pitkin County Airport (Sardy Field),US-CO
+19314,KAST,medium_airport,Astoria Regional Airport,US-OR
+3384,KATL,large_airport,Hartsfield Jackson Atlanta International Airport,US-GA
+19320,KATW,medium_airport,Appleton International Airport,US-WI
+3385,KATY,medium_airport,Watertown Regional Airport,US-SD
+19321,KAUG,medium_airport,Augusta State Airport,US-ME
+3386,KAUS,large_airport,Austin Bergstrom International Airport,US-TX
+19326,KAUW,medium_airport,Wausau Downtown Airport,US-WI
+3387,KAVL,medium_airport,Asheville Regional Airport,US-NC
+3388,KAVP,medium_airport,Wilkes-Barre/Scranton International Airport,US-PA
+19334,KAWO,medium_airport,Arlington Municipal Airport,US-WA
+3389,KAXN,medium_airport,Chandler Field,US-MN
+3390,KAZO,medium_airport,Kalamazoo/Battle Creek International Airport,US-MI
+3391,KBAB,medium_airport,Beale Air Force Base,US-CA
+3392,KBAD,medium_airport,Barksdale Air Force Base,US-LA
+3393,KBAF,medium_airport,Westfield-Barnes Regional Airport,US-MA
+3394,KBAK,medium_airport,Columbus Municipal Airport,US-IN
+19351,KBAZ,medium_airport,New Braunfels National Airport,US-TX
+19353,KBBD,medium_airport,Curtis Field,US-TX
+45961,KBBG,medium_airport,Branson Airport,US-MO
+19357,KBCE,medium_airport,Bryce Canyon Airport,US-UT
+19359,KBCT,medium_airport,Boca Raton Airport,US-FL
+3395,KBDE,medium_airport,Baudette International Airport,US-MN
+3396,KBDL,large_airport,Bradley International Airport,US-CT
+3397,KBDR,medium_airport,Igor I Sikorsky Memorial Airport,US-CT
+3398,KBED,medium_airport,Laurence G Hanscom Field,US-MA
+3399,KBFD,medium_airport,Bradford Regional Airport,US-PA
+3400,KBFF,medium_airport,Western Neb. Rgnl/William B. Heilig Airport,US-NE
+3401,KBFI,medium_airport,King County International Airport - Boeing Field,US-WA
+3402,KBFL,medium_airport,Meadows Field,US-CA
+3403,KBFM,medium_airport,Mobile Downtown Airport,US-AL
+3404,KBGM,medium_airport,Greater Binghamton/Edwin A Link field,US-NY
+3405,KBGR,medium_airport,Bangor International Airport,US-ME
+19373,KBHB,medium_airport,Hancock County-Bar Harbor Airport,US-ME
+3406,KBHM,large_airport,Birmingham-Shuttlesworth International Airport,US-AL
+3407,KBIF,medium_airport,Biggs Army Air Field (Fort Bliss),US-TX
+19377,KBIH,medium_airport,Eastern Sierra Regional Airport,US-CA
+3408,KBIL,medium_airport,Billings Logan International Airport,US-MT
+3409,KBIS,medium_airport,Bismarck Municipal Airport,US-ND
+3410,KBIX,medium_airport,Keesler Air Force Base,US-MS
+3411,KBJC,medium_airport,Rocky Mountain Metropolitan Airport,US-CO
+19380,KBJI,medium_airport,Bemidji Regional Airport,US-MN
+3412,KBKE,medium_airport,Baker City Municipal Airport,US-OR
+3413,KBKF,medium_airport,Buckley Space Force Base,US-CO
+3414,KBKL,medium_airport,Burke Lakefront Airport,US-OH
+3415,KBKW,medium_airport,Raleigh County Memorial Airport,US-WV
+19387,KBLF,medium_airport,Mercer County Airport,US-WV
+19388,KBLH,medium_airport,Blythe Airport,US-CA
+3416,KBLI,medium_airport,Bellingham International Airport,US-WA
+3417,KBLV,medium_airport,Scott AFB/Midamerica Airport,US-IL
+3418,KBMG,medium_airport,Monroe County Airport,US-IN
+3419,KBMI,medium_airport,Central Illinois Regional Airport at Bloomington-Normal,US-IL
+3420,KBNA,large_airport,Nashville International Airport,US-TN
+19397,KBNO,medium_airport,Burns Municipal Airport,US-OR
+3421,KBOI,large_airport,Boise Air Terminal/Gowen Field,US-ID
+3422,KBOS,large_airport,Boston Logan International Airport,US-MA
+19401,KBPI,medium_airport,Miley Memorial Field,US-WY
+19402,KBPK,medium_airport,Ozark Regional Airport,US-AR
+3423,KBPT,medium_airport,Jack Brooks Regional Airport,US-TX
+3424,KBQK,medium_airport,Brunswick Golden Isles Airport,US-GA
+19406,KBRD,medium_airport,Brainerd Lakes Regional Airport,US-MN
+3425,KBRL,medium_airport,Southeast Iowa Regional Airport,US-IA
+3426,KBRO,medium_airport,Brownsville South Padre Island International Airport,US-TX
+3427,KBTL,medium_airport,Battle Creek Executive Airport at Kellogg Field,US-MI
+3428,KBTM,medium_airport,Bert Mooney Airport,US-MT
+3429,KBTR,medium_airport,Baton Rouge Metropolitan Airport,US-LA
+3430,KBTV,medium_airport,Patrick Leahy Burlington International Airport,US-VT
+3431,KBUF,large_airport,Buffalo Niagara International Airport,US-NY
+3432,KBUR,large_airport,Hollywood Burbank/Bob Hope Airport,US-CA
+19417,KBVI,medium_airport,Beaver County Airport,US-PA
+3433,KBVY,medium_airport,Beverly Regional Airport,US-MA
+3434,KBWG,medium_airport,Bowling Green Warren County Regional Airport,US-KY
+3435,KBWI,large_airport,Baltimore/Washington International Thurgood Marshall Airport,US-MD
+3729,KBXM,medium_airport,Brunswick Executive Airport,US-ME
+3436,KBYH,medium_airport,Arkansas International Airport,US-AR
+19429,KBYI,medium_airport,Burley Municipal Airport,US-ID
+19430,KBYS,medium_airport,Bicycle Lake Army Air Field,US-CA
+3437,KBZN,medium_airport,Bozeman Yellowstone International Airport,US-MT
+3438,KCAE,medium_airport,Columbia Metropolitan Airport,US-SC
+3439,KCAK,medium_airport,Akron Canton Regional Airport,US-OH
+3440,KCAR,medium_airport,Caribou Municipal Airport,US-ME
+3441,KCBM,medium_airport,Columbus Air Force Base,US-MS
+19469,KCCR,medium_airport,Buchanan Field,US-CA
+19470,KCCY,medium_airport,Northeast Iowa Regional Airport,US-IA
+3442,KCDC,medium_airport,Cedar City Regional Airport,US-UT
+19474,KCDR,medium_airport,Chadron Municipal Airport,US-NE
+19475,KCDS,medium_airport,Childress Municipal Airport,US-TX
+3443,KCEC,medium_airport,Jack Mc Namara Field Airport,US-CA
+3444,KCEF,medium_airport,Westover Metropolitan Airport / Westover Air Reserve Base,US-MA
+3445,KCEW,medium_airport,Bob Sikes Airport,US-FL
+19482,KCEZ,medium_airport,Cortez Municipal Airport,US-CO
+3446,KCGF,medium_airport,Cuyahoga County Airport,US-OH
+3447,KCGI,medium_airport,Cape Girardeau Regional Airport,US-MO
+3448,KCHA,medium_airport,Chattanooga Metropolitan Airport (Lovell Field),US-TN
+3449,KCHO,medium_airport,Charlottesville Albemarle Airport,US-VA
+3450,KCHS,large_airport,Charleston International Airport,US-SC
+3451,KCID,medium_airport,The Eastern Iowa Airport,US-IA
+3452,KCIU,medium_airport,Chippewa County International Airport,US-MI
+3453,KCKB,medium_airport,North Central West Virginia Airport,US-WV
+3454,KCLE,large_airport,Cleveland Hopkins International Airport,US-OH
+3455,KCLL,medium_airport,Easterwood Field,US-TX
+3456,KCLM,medium_airport,William R Fairchild International Airport,US-WA
+3457,KCLT,large_airport,Charlotte Douglas International Airport,US-NC
+19517,KCMA,medium_airport,Camarillo Airport,US-CA
+3458,KCMH,large_airport,John Glenn Columbus International Airport,US-OH
+3459,KCMI,medium_airport,University of Illinois Willard Airport,US-IL
+3460,KCMX,medium_airport,Houghton County Memorial Airport,US-MI
+3461,KCNM,medium_airport,Cavern City Air Terminal,US-NM
+19527,KCNU,medium_airport,Chanute Martin Johnson Airport,US-KS
+19529,KCNY,medium_airport,Canyonlands Regional Airport,US-UT
+19530,KCOD,medium_airport,Yellowstone Regional Airport,US-WY
+19531,KCOE,medium_airport,Coeur D'Alene Airport - Pappy Boyington Field,US-ID
+3462,KCOF,medium_airport,Patrick Space Force Base,US-FL
+19534,KCON,medium_airport,Concord Municipal Airport,US-NH
+3463,KCOS,large_airport,City of Colorado Springs Municipal Airport,US-CO
+3464,KCOU,medium_airport,Columbia Regional Airport,US-MO
+3465,KCPR,medium_airport,Casper-Natrona County International Airport,US-WY
+19549,KCRE,medium_airport,Grand Strand Airport,US-SC
+19550,KCRG,medium_airport,Jacksonville Executive at Craig Airport,US-FL
+3466,KCRP,medium_airport,Corpus Christi International Airport,US-TX
+19552,KCRQ,medium_airport,McClellan-Palomar Airport,US-CA
+3467,KCRW,medium_airport,Yeager Airport,US-WV
+3468,KCSG,medium_airport,Columbus Airport,US-GA
+3469,KCSV,medium_airport,Crossville Memorial Airport Whitson Field,US-TN
+3470,KCTB,medium_airport,Cut Bank International Airport,US-MT
+19564,KCUB,medium_airport,Jim Hamilton L.B. Owens Airport,US-SC
+3471,KCVG,large_airport,Cincinnati Northern Kentucky International Airport,US-KY
+19569,KCVN,medium_airport,Clovis Municipal Airport,US-NM
+3472,KCVO,medium_airport,Corvallis Municipal Airport,US-OR
+3473,KCVS,medium_airport,Cannon Air Force Base,US-NM
+19571,KCWA,medium_airport,Central Wisconsin Airport,US-WI
+3475,KCXO,medium_airport,Conroe-North Houston Regional Airport,US-TX
+19577,KCXP,medium_airport,Carson Airport,US-NV
+3476,KCYS,medium_airport,Cheyenne Regional Jerry Olson Field,US-WY
+3477,KDAA,medium_airport,Davison Army Air Field,US-VA
+3478,KDAB,medium_airport,Daytona Beach International Airport,US-FL
+19615,KDAG,medium_airport,Barstow Daggett Airport,US-CA
+3479,KDAL,large_airport,Dallas Love Field,US-TX
+3480,KDAN,medium_airport,Danville Regional Airport,US-VA
+3481,KDAY,medium_airport,James M. Cox Dayton International Airport,US-OH
+3482,KDBQ,medium_airport,Dubuque Regional Airport,US-IA
+3483,KDCA,large_airport,Ronald Reagan Washington National Airport,US-DC
+3484,KDDC,medium_airport,Dodge City Regional Airport,US-KS
+3485,KDEC,medium_airport,Decatur Airport,US-IL
+3486,KDEN,large_airport,Denver International Airport,US-CO
+3487,KDET,medium_airport,Coleman A. Young Municipal Airport,US-MI
+3488,KDFW,large_airport,Dallas Fort Worth International Airport,US-TX
+3489,KDHN,medium_airport,Dothan Regional Airport,US-AL
+19628,KDHT,medium_airport,Dalhart Municipal Airport,US-TX
+19630,KDIK,medium_airport,Dickinson Theodore Roosevelt Regional Airport,US-ND
+3490,KDLF,medium_airport,Laughlin Air Force Base,US-TX
+3491,KDLH,medium_airport,Duluth International Airport,US-MN
+19640,KDLS,medium_airport,Columbia Gorge Regional Airport,US-OR
+3492,KDMA,medium_airport,Davis Monthan Air Force Base,US-AZ
+3493,KDMN,medium_airport,Deming Municipal Airport,US-NM
+19644,KDNL,medium_airport,Daniel Field,US-GA
+3494,KDOV,medium_airport,Dover Civil Air Terminal/Dover Air Force Base,US-DE
+19648,KDPA,medium_airport,Dupage Airport,US-IL
+19652,KDRA,medium_airport,Desert Rock Airport,US-NV
+3495,KDRI,medium_airport,Beauregard Regional Airport,US-LA
+19654,KDRO,medium_airport,Durango La Plata County Airport,US-CO
+19655,KDRT,medium_airport,Del Rio International Airport,US-TX
+3496,KDSM,large_airport,Des Moines International Airport,US-IA
+19661,KDTS,medium_airport,Destin Executive Airport,US-FL
+3497,KDTW,large_airport,Detroit Metropolitan Wayne County Airport,US-MI
+19662,KDUA,medium_airport,Durant Regional Airport - Eaker Field,US-OK
+19664,KDUG,medium_airport,Bisbee Douglas International Airport,US-AZ
+3498,KDUJ,medium_airport,DuBois Regional Airport,US-PA
+19668,KDVL,medium_airport,Devils Lake Regional Airport,US-ND
+19676,KDXR,medium_airport,Danbury Municipal Airport,US-CT
+3499,KDYS,medium_airport,Dyess Air Force Base,US-TX
+19716,KEAR,medium_airport,Kearney Regional Airport,US-NE
+19717,KEAT,medium_airport,Pangborn Memorial Airport,US-WA
+3501,KEAU,medium_airport,Chippewa Valley Regional Airport,US-WI
+3502,KECG,medium_airport,Elizabeth City Regional Airport & Coast Guard Air Station,US-NC
+46530,KECP,medium_airport,Northwest Florida Beaches International Airport,US-FL
+45955,KEDC,medium_airport,Austin Executive Airport,US-TX
+3503,KEDW,medium_airport,Edwards Air Force Base,US-CA
+19727,KEED,medium_airport,Needles Airport,US-CA
+3504,KEEN,medium_airport,Dillant Hopkins Airport,US-NH
+19729,KEET,medium_airport,Shelby County Airport,US-AL
+19731,KEFD,medium_airport,Ellington Airport,US-TX
+3505,KEGE,medium_airport,Eagle County Regional Airport,US-CO
+19735,KEGI,medium_airport,Duke Field,US-FL
+3506,KEKA,medium_airport,Murray Field,US-CA
+3507,KEKN,medium_airport,Elkins-Randolph County Regional Airport,US-WV
+3508,KEKO,medium_airport,Elko Regional Airport,US-NV
+3509,KELD,medium_airport,South Arkansas Regional Airport at Goodwin Field,US-AR
+3510,KELM,medium_airport,Elmira Corning Regional Airport,US-NY
+3511,KELO,medium_airport,Ely Municipal Airport,US-MN
+3512,KELP,large_airport,El Paso International Airport,US-TX
+19753,KELY,medium_airport,Ely Airport Yelland Field,US-NV
+3513,KEND,medium_airport,Vance Air Force Base,US-OK
+19760,KENV,medium_airport,Wendover Airport,US-UT
+3514,KENW,medium_airport,Kenosha Regional Airport,US-WI
+3515,KERI,medium_airport,Erie International Tom Ridge Field,US-PA
+19770,KESC,medium_airport,Delta County Airport,US-MI
+3516,KESF,medium_airport,Esler Army Airfield / Esler Regional Airport,US-LA
+3517,KEUG,medium_airport,Eugene Airport,US-OR
+3518,KEVV,medium_airport,Evansville Regional Airport,US-IN
+19782,KEVW,medium_airport,Evanston-Uinta County Airport-Burns Field,US-WY
+3519,KEWB,medium_airport,New Bedford Regional Airport,US-MA
+3520,KEWN,medium_airport,Coastal Carolina Regional Airport,US-NC
+3521,KEWR,large_airport,Newark Liberty International Airport,US-NJ
+3522,KEYW,medium_airport,Key West International Airport,US-FL
+19843,KFAF,medium_airport,Felker Army Air Field,US-VA
+3523,KFAR,medium_airport,Hector International Airport,US-ND
+3524,KFAT,large_airport,Fresno Yosemite International Airport,US-CA
+3525,KFAY,medium_airport,Fayetteville Regional Airport - Grannis Field,US-NC
+3526,KFBG,medium_airport,Simmons Army Air Field,US-NC
+19851,KFCS,medium_airport,Butts AAF (Fort Carson) Air Field,US-CO
+19857,KFDY,medium_airport,Findlay Airport,US-OH
+3528,KFFO,medium_airport,Wright-Patterson Air Force Base,US-OH
+19868,KFHR,medium_airport,Friday Harbor Airport,US-WA
+3529,KFHU,medium_airport,Sierra Vista Municipal Airport / Libby Army Air Field,US-AZ
+19872,KFKL,medium_airport,Venango Regional Airport,US-PA
+3530,KFLG,medium_airport,Flagstaff Pulliam Airport,US-AZ
+3531,KFLL,large_airport,Fort Lauderdale Hollywood International Airport,US-FL
+3532,KFLO,medium_airport,Florence Regional Airport,US-SC
+3534,KFME,medium_airport,Fort Meade Executive Airport,US-MD
+19881,KFMN,medium_airport,Four Corners Regional Airport,US-NM
+19882,KFMY,medium_airport,Page Field,US-FL
+19885,KFNL,medium_airport,Northern Colorado Regional Airport,US-CO
+3535,KFNT,medium_airport,Bishop International Airport,US-MI
+3536,KFOD,medium_airport,Fort Dodge Regional Airport,US-IA
+3537,KFOE,medium_airport,Topeka Regional Airport,US-KS
+3538,KFPR,medium_airport,Treasure Coast International Airport,US-FL
+3539,KFRG,medium_airport,Republic Airport,US-NY
+3540,KFRI,medium_airport,Marshall Army Air Field,US-KS
+3541,KFSD,medium_airport,Sioux Falls Regional Airport,US-SD
+3542,KFSI,medium_airport,Henry Post Army Air Field,US-OK
+3543,KFSM,medium_airport,Fort Smith Regional Airport,US-AR
+19900,KFST,medium_airport,Fort Stockton Pecos County Airport,US-TX
+3544,KFTK,medium_airport,Godman Army Air Field,US-KY
+3545,KFTW,medium_airport,Fort Worth Meacham International Airport,US-TX
+3546,KFTY,medium_airport,Fulton County Airport Brown Field,US-GA
+3547,KFWA,medium_airport,Fort Wayne International Airport,US-IN
+19912,KFXE,medium_airport,Fort Lauderdale Executive Airport,US-FL
+3548,KFYV,medium_airport,Drake Field,US-AR
+19929,KGCC,medium_airport,Northeast Wyoming Regional Airport,US-WY
+3550,KGCK,medium_airport,Garden City Regional Airport,US-KS
+3551,KGCN,medium_airport,Grand Canyon National Park Airport,US-AZ
+19936,KGDV,medium_airport,Dawson Community Airport,US-MT
+3552,KGEG,large_airport,Spokane International Airport,US-WA
+3553,KGFK,medium_airport,Grand Forks International Airport,US-ND
+3554,KGFL,medium_airport,Floyd Bennett Memorial Airport,US-NY
+3555,KGGG,medium_airport,East Texas Regional Airport,US-TX
+3556,KGGW,medium_airport,Glasgow Valley County Airport Wokal Field,US-MT
+3557,KGJT,medium_airport,Grand Junction Regional Airport,US-CO
+19956,KGLD,medium_airport,Goodland Municipal Airport,US-KS
+19958,KGLH,medium_airport,Mid Delta Regional Airport,US-MS
+3558,KGLS,medium_airport,Scholes International At Galveston Airport,US-TX
+19963,KGMU,medium_airport,Greenville Downtown Airport,US-SC
+3559,KGNV,medium_airport,Gainesville Regional Airport,US-FL
+3560,KGON,medium_airport,Groton New London Airport,US-CT
+3527,KGPI,medium_airport,Glacier Park International Airport,US-MT
+3561,KGPT,medium_airport,Gulfport Biloxi International Airport,US-MS
+3562,KGRB,medium_airport,Austin Straubel International Airport,US-WI
+3563,KGRF,medium_airport,Gray Army Air Field,US-WA
+3564,KGRI,medium_airport,Central Nebraska Regional Airport,US-NE
+3565,KGRK,medium_airport,Killeen Regional Airport / Robert Gray Army Airfield,US-TX
+3566,KGRR,large_airport,Gerald R. Ford International Airport,US-MI
+3567,KGSB,medium_airport,Seymour Johnson Air Force Base,US-NC
+3568,KGSO,large_airport,Piedmont Triad International Airport,US-NC
+3569,KGSP,medium_airport,Greenville-Spartanburg International Airport,US-SC
+3570,KGTB,medium_airport,Wheeler Sack Army Air Field,US-NY
+3571,KGTF,medium_airport,Great Falls International Airport,US-MT
+19982,KGTR,medium_airport,Golden Triangle Regional Airport,US-MS
+19984,KGUC,medium_airport,Gunnison Crested Butte Regional Airport,US-CO
+3572,KGUP,medium_airport,Gallup Municipal Airport,US-NM
+3573,KGUS,medium_airport,Grissom Air Reserve Base,US-IN
+19985,KGUY,medium_airport,Guymon Municipal Airport,US-OK
+3574,KGWO,medium_airport,Greenwood–Leflore Airport,US-MS
+19997,KGYI,medium_airport,North Texas Regional Airport Perrin Field,US-TX
+3575,KGYY,medium_airport,Gary/Chicago International Airport,US-IN
+20027,KHBG,medium_airport,Hattiesburg Bobby L Chain Municipal Airport,US-MS
+20029,KHBR,medium_airport,Hobart Regional Airport,US-OK
+20038,KHDN,medium_airport,Yampa Valley Airport,US-CO
+20041,KHEF,medium_airport,Washington Manassas Harry P. Davis Field,US-VA
+3576,KHFD,medium_airport,Hartford Brainard Airport,US-CT
+3577,KHGR,medium_airport,Hagerstown Regional Richard A Henson Field,US-MD
+3578,KHHR,medium_airport,Jack Northrop Field Hawthorne Municipal Airport,US-CA
+3579,KHIB,medium_airport,Range Regional Airport,US-MN
+3580,KHIF,medium_airport,Hill Air Force Base,US-UT
+20053,KHII,medium_airport,Lake Havasu City Airport,US-AZ
+20054,KHIO,medium_airport,Portland Hillsboro Airport,US-OR
+3581,KHKY,medium_airport,Hickory Regional Airport,US-NC
+20061,KHLG,medium_airport,Wheeling Ohio County Airport,US-WV
+3582,KHLN,medium_airport,Helena Regional Airport,US-MT
+3584,KHMN,medium_airport,Holloman Air Force Base,US-NM
+20071,KHOB,medium_airport,Lea County Regional Airport,US-NM
+3585,KHON,medium_airport,Huron Regional Airport,US-SD
+3586,KHOP,medium_airport,Campbell Army Airfield (Fort Campbell),US-KY
+3587,KHOT,medium_airport,Memorial Field Airport,US-AR
+3588,KHOU,large_airport,William P. Hobby Airport,US-TX
+3589,KHPN,medium_airport,Westchester County Airport,US-NY
+3590,KHQM,medium_airport,Bowerman Airport,US-WA
+3591,KHRL,medium_airport,Valley International Airport,US-TX
+3592,KHRO,medium_airport,Boone County Airport,US-AR
+20081,KHRT,medium_airport,Hurlburt Field,US-FL
+3593,KHST,medium_airport,Homestead Air Reserve Base,US-FL
+3594,KHSV,medium_airport,Huntsville International Airport,US-AL
+3595,KHTS,medium_airport,Tri-State Airport / Milton J. Ferguson Field,US-WV
+3596,KHUA,medium_airport,Redstone Army Air Field,US-AL
+3597,KHUF,medium_airport,"Terre Haute Regional Airport, Hulman Field",US-IN
+20095,KHUL,medium_airport,Houlton International Airport,US-ME
+3598,KHUT,medium_airport,Hutchinson Municipal Airport,US-KS
+3599,KHVN,medium_airport,Tweed New Haven Airport,US-CT
+20099,KHVR,medium_airport,Havre City County Airport,US-MT
+20102,KHWO,medium_airport,North Perry Airport,US-FL
+20105,KHXD,medium_airport,Hilton Head Airport,US-SC
+3600,KHYA,medium_airport,Cape Cod Gateway Airport,US-MA
+20107,KHYI,medium_airport,San Marcos Regional Airport,US-TX
+20108,KHYR,medium_airport,Sawyer County Airport,US-WI
+20109,KHYS,medium_airport,Hays Regional Airport,US-KS
+20117,KHZY,medium_airport,Northeast Ohio Regional Airport,US-OH
+20129,KI39,medium_airport,Central Kentucky Regional Airport,US-KY
+3601,KIAB,medium_airport,McConnell Air Force Base,US-KS
+3602,KIAD,large_airport,Washington Dulles International Airport,US-VA
+3603,KIAG,medium_airport,Niagara Falls International Airport,US-NY
+3604,KIAH,large_airport,George Bush Intercontinental Airport,US-TX
+3605,KICT,medium_airport,Wichita Dwight D. Eisenhower National Airport,US-KS
+3606,KIDA,medium_airport,Idaho Falls Regional Airport,US-ID
+20160,KIFP,medium_airport,Laughlin Bullhead International Airport,US-AZ
+20161,KIGM,medium_airport,Kingman Airport,US-AZ
+3607,KIKK,medium_airport,Greater Kankakee Airport,US-IL
+3608,KILG,medium_airport,Wilmington Airport,US-DE
+3609,KILM,medium_airport,Wilmington International Airport,US-NC
+20173,KILN,medium_airport,Wilmington Airpark,US-OH
+20177,KIMT,medium_airport,Ford Airport,US-MI
+3610,KIND,large_airport,Indianapolis International Airport,US-IN
+3611,KINK,medium_airport,Winkler County Airport,US-TX
+3612,KINL,medium_airport,Falls International Airport,US-MN
+3613,KINT,medium_airport,Smith Reynolds Airport,US-NC
+20180,KINW,medium_airport,Winslow Lindbergh Regional Airport,US-AZ
+20184,KIPL,medium_airport,Imperial County Airport,US-CA
+3614,KIPT,medium_airport,Williamsport Regional Airport,US-PA
+3615,KIRK,medium_airport,Kirksville Regional Airport,US-MO
+20187,KISM,medium_airport,Kissimmee Gateway Airport,US-FL
+20189,KISO,medium_airport,Kinston Regional Jetport At Stallings Field,US-NC
+3616,KISP,medium_airport,Long Island MacArthur Airport,US-NY
+20193,KITH,medium_airport,Ithaca Tompkins Regional Airport,US-NY
+3617,KIWA,medium_airport,Mesa Gateway Airport,US-AZ
+3618,KJAC,medium_airport,Jackson Hole Airport,US-WY
+3619,KJAN,medium_airport,Jackson-Medgar Wiley Evers International Airport,US-MS
+3620,KJAX,large_airport,Jacksonville International Airport,US-FL
+3621,KJBR,medium_airport,Jonesboro Municipal Airport,US-AR
+20205,KJCT,medium_airport,Kimble County Airport,US-TX
+3622,KJFK,large_airport,John F. Kennedy International Airport,US-NY
+20213,KJHW,medium_airport,Chautauqua County-Jamestown Airport,US-NY
+20216,KJKL,medium_airport,Julian Carroll Airport,US-KY
+3623,KJLN,medium_airport,Joplin Regional Airport,US-MO
+3624,KJMS,medium_airport,Jamestown Regional Airport,US-ND
+20218,KJNX,medium_airport,Johnston Regional Airport,US-NC
+20220,KJQF,medium_airport,Concord-Padgett Regional Airport,US-NC
+3625,KJST,medium_airport,John Murtha Johnstown Cambria County Airport,US-PA
+20227,KJWY,medium_airport,Mid-Way Regional Airport,US-TX
+3626,KJXN,medium_airport,Jackson County Airport/Reynolds Field,US-MI
+20277,KKLS,medium_airport,Southwest Washington Regional Airport,US-WA
+20300,KL45,medium_airport,Bakersfield International Airport,US-CA
+20308,KL71,medium_airport,California City Municipal Airport,US-CA
+20317,KLAA,medium_airport,Southeast Colorado Regional Airport,US-CO
+3627,KLAF,medium_airport,Purdue University Airport,US-IN
+3628,KLAL,medium_airport,Lakeland Linder International Airport,US-FL
+3629,KLAN,medium_airport,Capital Region International Airport,US-MI
+3630,KLAR,medium_airport,Laramie Regional Airport,US-WY
+3631,KLAS,large_airport,Harry Reid International Airport,US-NV
+20319,KLAW,medium_airport,Lawton Fort Sill Regional Airport,US-OK
+3632,KLAX,large_airport,Los Angeles International Airport,US-CA
+3633,KLBB,medium_airport,Lubbock Preston Smith International Airport,US-TX
+3634,KLBE,medium_airport,Arnold Palmer Regional Airport,US-PA
+3635,KLBF,medium_airport,North Platte Regional Airport Lee Bird Field,US-NE
+3636,KLBL,medium_airport,Liberal Mid-America Regional Airport,US-KS
+20322,KLBT,medium_airport,Lumberton Regional Airport,US-NC
+20323,KLBX,medium_airport,Texas Gulf Coast Regional Airport,US-TX
+3637,KLCH,medium_airport,Lake Charles Regional Airport,US-LA
+3638,KLCK,medium_airport,Rickenbacker International Airport,US-OH
+3639,KLEB,medium_airport,Lebanon Municipal Airport,US-NH
+20329,KLEE,medium_airport,Leesburg International Airport,US-FL
+3640,KLEX,medium_airport,Blue Grass Airport,US-KY
+3641,KLFI,medium_airport,Langley Air Force Base,US-VA
+20332,KLFK,medium_airport,Angelina County Airport,US-TX
+3642,KLFT,medium_airport,Lafayette Regional Airport,US-LA
+3643,KLGA,large_airport,LaGuardia Airport,US-NY
+3644,KLGB,large_airport,Long Beach International Airport,US-CA
+20337,KLGU,medium_airport,Logan-Cache Airport,US-UT
+3645,KLIT,medium_airport,Bill & Hillary Clinton National Airport/Adams Field,US-AR
+20354,KLLQ,medium_airport,Monticello Municipal Ellis Field,US-AR
+3646,KLMT,medium_airport,Crater Lake-Klamath Regional Airport,US-OR
+20359,KLND,medium_airport,Hunt Field,US-WY
+3647,KLNK,medium_airport,Lincoln Airport,US-NE
+3648,KLNS,medium_airport,Lancaster Airport,US-PA
+20364,KLOL,medium_airport,Derby Field,US-NV
+3649,KLOU,medium_airport,Bowman Field,US-KY
+3650,KLOZ,medium_airport,London-Corbin Airport/Magee Field,US-KY
+3651,KLRD,medium_airport,Laredo International Airport,US-TX
+3652,KLRF,medium_airport,Little Rock Air Force Base,US-AR
+3653,KLRU,medium_airport,Las Cruces International Airport,US-NM
+3654,KLSE,medium_airport,La Crosse Regional Airport,US-WI
+3655,KLSF,medium_airport,Lawson Army Air Field,US-GA
+3656,KLSV,medium_airport,Nellis Air Force Base,US-NV
+3657,KLTS,medium_airport,Altus Air Force Base,US-OK
+3658,KLUF,medium_airport,Luke Air Force Base,US-AZ
+3659,KLUK,medium_airport,Cincinnati Municipal Airport Lunken Field,US-OH
+20386,KLVM,medium_airport,Mission Field,US-MT
+20388,KLVS,medium_airport,Las Vegas Municipal Airport,US-NM
+20390,KLWB,medium_airport,Greenbrier Valley Airport,US-WV
+3660,KLWM,medium_airport,Lawrence Municipal Airport,US-MA
+20393,KLWS,medium_airport,Lewiston Nez Perce County Airport,US-ID
+3661,KLWT,medium_airport,Lewistown Municipal Airport,US-MT
+3662,KLYH,medium_airport,Lynchburg Regional Airport - Preston Glenn Field,US-VA
+3663,KMAF,medium_airport,Midland International Air and Space Port,US-TX
+20474,KMBG,medium_airport,Mobridge Municipal Airport,US-SD
+3664,KMBS,medium_airport,MBS International Airport,US-MI
+3665,KMCB,medium_airport,McComb-Pike County Airport / John E Lewis Field,US-MS
+3666,KMCC,medium_airport,McClellan Airfield,US-CA
+20480,KMCE,medium_airport,Merced Regional Macready Field,US-CA
+3667,KMCF,medium_airport,MacDill Air Force Base,US-FL
+3668,KMCI,large_airport,Kansas City International Airport,US-MO
+20481,KMCK,medium_airport,McCook Ben Nelson Regional Airport,US-NE
+3669,KMCN,medium_airport,Middle Georgia Regional Airport,US-GA
+3670,KMCO,large_airport,Orlando International Airport,US-FL
+20482,KMCW,medium_airport,Mason City Municipal Airport,US-IA
+3671,KMDH,medium_airport,Southern Illinois Airport,US-IL
+3672,KMDT,medium_airport,Harrisburg International Airport,US-PA
+3673,KMDW,large_airport,Chicago Midway International Airport,US-IL
+3674,KMEI,medium_airport,Key Field / Meridian Regional Airport,US-MS
+3675,KMEM,large_airport,Frederick W. Smith International Airport,US-TN
+3676,KMER,medium_airport,Castle Airport,US-CA
+3677,KMFD,medium_airport,Mansfield Lahm Regional Airport,US-OH
+3678,KMFE,medium_airport,McAllen Miller International Airport,US-TX
+3679,KMFR,medium_airport,Rogue Valley International-Medford Airport,US-OR
+20498,KMGC,medium_airport,Michigan City Municipal Airport,US-IN
+3680,KMGE,medium_airport,Dobbins Air Reserve Base,US-GA
+3681,KMGM,medium_airport,Montgomery Regional (Dannelly Field) Airport,US-AL
+3682,KMGW,medium_airport,Morgantown Municipal Airport Walter L. (Bill) Hart Field,US-WV
+3683,KMHK,medium_airport,Manhattan Regional Airport,US-KS
+20506,KMHR,medium_airport,Sacramento Mather Airport,US-CA
+3684,KMHT,medium_airport,Manchester-Boston Regional Airport,US-NH
+20507,KMHV,medium_airport,Mojave Air &  Space Port,US-CA
+3685,KMIA,large_airport,Miami International Airport,US-FL
+3686,KMIB,medium_airport,Minot Air Force Base,US-ND
+3687,KMIE,medium_airport,Delaware County Johnson Field,US-IN
+3688,KMIV,medium_airport,Millville Municipal Airport,US-NJ
+3689,KMKC,medium_airport,Charles B. Wheeler Downtown Airport,US-MO
+3690,KMKE,large_airport,General Mitchell International Airport,US-WI
+3691,KMKG,medium_airport,Muskegon County Airport,US-MI
+3692,KMKL,medium_airport,McKellar-Sipes Regional Airport,US-TN
+3693,KMLB,medium_airport,Melbourne Orlando International Airport,US-FL
+3694,KMLC,medium_airport,Mc Alester Regional Airport,US-OK
+3695,KMLI,medium_airport,Quad City International Airport,US-IL
+3696,KMLS,medium_airport,Miles City Airport - Frank Wiley Field,US-MT
+3697,KMLU,medium_airport,Monroe Regional Airport,US-LA
+20527,KMMH,medium_airport,Mammoth Yosemite Airport,US-CA
+20532,KMMT,medium_airport,Mc Entire Joint National Guard Base,US-SC
+3698,KMMU,medium_airport,Morristown Municipal Airport,US-NJ
+3699,KMMV,medium_airport,McMinnville Municipal Airport,US-OR
+3700,KMOB,medium_airport,Mobile Regional Airport,US-AL
+3701,KMOD,medium_airport,Modesto City Co-Harry Sham Field,US-CA
+3702,KMOT,medium_airport,Minot International Airport,US-ND
+20551,KMPV,medium_airport,Edward F Knapp State Airport,US-VT
+3703,KMQY,medium_airport,Smyrna Airport,US-TN
+3704,KMRB,medium_airport,Eastern WV Regional Airport/Shepherd Field,US-WV
+3705,KMRY,medium_airport,Monterey Regional Airport,US-CA
+3706,KMSL,medium_airport,Northwest Alabama Regional Airport,US-AL
+3707,KMSN,medium_airport,Dane County Regional Truax Field,US-WI
+3708,KMSO,medium_airport,Missoula Montana Airport,US-MT
+3709,KMSP,large_airport,Minneapolis–Saint Paul International Airport / Wold–Chamberlain Field,US-MN
+3710,KMSS,medium_airport,Massena International Airport Richards Field,US-NY
+3711,KMSY,large_airport,Louis Armstrong New Orleans International Airport,US-LA
+3712,KMTC,medium_airport,Selfridge Air National Guard Base Airport,US-MI
+20564,KMTH,medium_airport,Florida Keys Marathon International Airport,US-FL
+20565,KMTJ,medium_airport,Montrose Regional Airport,US-CO
+3713,KMTN,medium_airport,Martin State Airport,US-MD
+3714,KMUI,medium_airport,Muir Army Air Field (Fort Indiantown Gap) Airport,US-PA
+3715,KMUO,medium_airport,Mountain Home Air Force Base,US-ID
+20579,KMWA,medium_airport,Veterans Airport of Southern Illinois,US-IL
+20581,KMWH,medium_airport,Grant County International Airport,US-WA
+20583,KMWL,medium_airport,Mineral Wells Regional Airport,US-TX
+3716,KMXF,medium_airport,Maxwell Air Force Base,US-AL
+20591,KMYL,medium_airport,McCall Municipal Airport,US-ID
+3717,KMYR,large_airport,Myrtle Beach International Airport,US-SC
+3718,KMYV,medium_airport,Yuba County Airport,US-CA
+3719,KNBC,medium_airport,Beaufort MCAS - Merritt Field,US-SC
+3720,KNBG,medium_airport,New Orleans NAS JRB/Alvin Callender Field,US-LA
+3721,KNCA,medium_airport,MCAS New River / McCutcheon Field,US-NC
+20634,KNDZ,medium_airport,Whiting Field Naval Air Station South Airport,US-FL
+3722,KNEL,medium_airport,Lakehurst Maxfield Field Airport,US-NJ
+3723,KNEW,medium_airport,Lakefront Airport,US-LA
+3724,KNFG,medium_airport,Camp Pendleton MCAS (Munn Field) Airport,US-CA
+3725,KNFL,medium_airport,Fallon Naval Air Station,US-NV
+20639,KNFW,medium_airport,NAS Fort Worth JRB / Carswell Field,US-TX
+3726,KNGP,medium_airport,Naval Air Station Corpus Christi Truax Field,US-TX
+3727,KNGU,medium_airport,Norfolk Naval Station (Chambers Field),US-VA
+3728,KNHK,medium_airport,Patuxent River Naval Air Station (Trapnell Field),US-MD
+20643,KNID,medium_airport,China Lake Naws (Armitage Field) Airport,US-CA
+3730,KNIP,medium_airport,Jacksonville Naval Air Station (Towers Field),US-FL
+3731,KNJK,medium_airport,El Centro NAF Airport (Vraciu Field),US-CA
+3732,KNKT,medium_airport,Cherry Point MCAS / Cunningham Field/,US-NC
+3733,KNKX,medium_airport,Miramar Marine Corps Air Station - Mitscher Field,US-CA
+20647,KNLC,medium_airport,Lemoore Naval Air Station (Reeves Field) Airport,US-CA
+3734,KNMM,medium_airport,Naval Air Station Meridian / McCain Field,US-MS
+3735,KNPA,medium_airport,Naval Air Station Pensacola Forrest Sherman Field,US-FL
+3736,KNQA,medium_airport,Millington-Memphis Airport,US-TN
+3737,KNQI,medium_airport,Kingsville Naval Air Station,US-TX
+3738,KNQX,medium_airport,Naval Air Station Key West/Boca Chica Field,US-FL
+20652,KNRB,medium_airport,Naval Station Mayport / Admiral David L McDonald Field,US-FL
+20656,KNSE,medium_airport,Whiting Field Naval Air Station - North,US-FL
+3739,KNTD,medium_airport,Point Mugu Naval Air Station (Naval Base Ventura Co),US-CA
+3740,KNTU,medium_airport,Oceana Naval Air Station,US-VA
+3741,KNUQ,medium_airport,Moffett Federal Airfield,US-CA
+20661,KNUW,medium_airport,Whidbey Island Naval Air Station (Ault Field),US-WA
+20666,KNXP,medium_airport,Twentynine Palms Strategic Expeditionary Landing Field,US-CA
+20669,KNYG,medium_airport,Quantico Marine Corps Airfield / Turner Field,US-VA
+3961,KNYL,medium_airport,Yuma International Airport / Marine Corps Air Station Yuma,US-AZ
+3743,KNZY,medium_airport,North Island Naval Air Station-Halsey Field,US-CA
+20709,KOAJ,medium_airport,Albert J Ellis Airport,US-NC
+3744,KOAK,large_airport,Oakland San Francisco Bay Airport,US-CA
+3745,KOFF,medium_airport,Offutt Air Force Base,US-NE
+20722,KOFK,medium_airport,Karl Stefan Memorial Airport,US-NE
+20725,KOGB,medium_airport,Orangeburg Municipal Airport,US-SC
+3746,KOGD,medium_airport,Ogden Hinckley Airport,US-UT
+20727,KOGS,medium_airport,Ogdensburg International Airport,US-NY
+20732,KOKB,medium_airport,Oceanside Municipal Airport,US-CA
+3747,KOKC,large_airport,OKC Will Rogers World Airport,US-OK
+20739,KOLF,medium_airport,L M Clayton Airport,US-MT
+3749,KOLM,medium_airport,Olympia Regional Airport,US-WA
+20741,KOLS,medium_airport,Nogales International Airport,US-AZ
+3750,KOLU,medium_airport,Columbus Municipal Airport,US-NE
+3751,KOMA,large_airport,Eppley Airfield,US-NE
+20751,KONO,medium_airport,Ontario Municipal Airport,US-OR
+20752,KONP,medium_airport,Newport Municipal Airport,US-OR
+3752,KONT,large_airport,Ontario International Airport,US-CA
+20757,KOPF,medium_airport,Miami-Opa Locka Executive Airport,US-FL
+3753,KOQU,medium_airport,Quonset State Airport,US-RI
+3754,KORD,large_airport,Chicago O'Hare International Airport,US-IL
+3755,KORF,large_airport,Norfolk International Airport,US-VA
+3756,KORH,medium_airport,Worcester Regional Airport,US-MA
+20765,KORL,medium_airport,Orlando Executive Airport,US-FL
+23952,KORS,medium_airport,Orcas Island Airport,US-WA
+3757,KOSH,medium_airport,Wittman Regional Airport,US-WI
+3758,KOSU,medium_airport,The Ohio State University Airport - Don Scott Field,US-OH
+3759,KOTH,medium_airport,Southwest Oregon Regional Airport,US-OR
+3760,KOTM,medium_airport,Ottumwa Regional Airport,US-IA
+3761,KOWB,medium_airport,Owensboro Daviess County Airport,US-KY
+20777,KOWD,medium_airport,Norwood Memorial Airport,US-MA
+20781,KOXB,medium_airport,Ocean City Municipal Airport,US-MD
+20785,KOXR,medium_airport,Oxnard Airport,US-CA
+3762,KOZR,medium_airport,Cairns AAF (Fort Rucker) Air Field,US-AL
+3763,KPAE,medium_airport,Seattle Paine Field International Airport,US-WA
+3764,KPAH,medium_airport,Barkley Regional Airport,US-KY
+3765,KPAM,medium_airport,Tyndall Air Force Base,US-FL
+20805,KPAO,medium_airport,Palo Alto Airport,US-CA
+20807,KPBF,medium_airport,"Pine Bluff Regional Airport, Grider Field",US-AR
+20808,KPBG,medium_airport,Plattsburgh International Airport,US-NY
+3766,KPBI,large_airport,President Donald J. Trump International Airport,US-FL
+20812,KPCW,medium_airport,Erie-Ottawa International Airport,US-OH
+3767,KPDK,medium_airport,DeKalb Peachtree Airport,US-GA
+20815,KPDT,medium_airport,Eastern Oregon Regional Airport at Pendleton,US-OR
+3768,KPDX,large_airport,Portland International Airport,US-OR
+20821,KPGA,medium_airport,Page Municipal Airport,US-AZ
+20822,KPGD,medium_airport,Punta Gorda Airport,US-FL
+20824,KPGV,medium_airport,Pitt-Greenville Airport,US-NC
+3770,KPHF,medium_airport,Newport News Williamsburg International Airport,US-VA
+3771,KPHL,large_airport,Philadelphia International Airport,US-PA
+3772,KPHX,large_airport,Phoenix Sky Harbor International Airport,US-AZ
+3773,KPIA,medium_airport,General Wayne A. Downing Peoria International Airport,US-IL
+3774,KPIB,medium_airport,Hattiesburg Laurel Regional Airport,US-MS
+3775,KPIE,large_airport,St. Petersburg Clearwater International Airport,US-FL
+3776,KPIH,medium_airport,Pocatello Regional Airport,US-ID
+3777,KPIR,medium_airport,Pierre Regional Airport,US-SD
+3778,KPIT,large_airport,Pittsburgh International Airport,US-PA
+3779,KPKB,medium_airport,Mid Ohio Valley Regional Airport,US-WV
+3781,KPLN,medium_airport,Pellston Regional Airport of Emmet County Airport,US-MI
+3782,KPMD,medium_airport,Palmdale Regional Airport / USAF Plant 42 Airport,US-CA
+20848,KPNA,medium_airport,Ralph Wenz Field,US-WY
+20849,KPNC,medium_airport,Ponca City Regional Airport,US-OK
+20850,KPNE,medium_airport,Northeast Philadelphia Airport,US-PA
+3783,KPNS,large_airport,Pensacola International Airport,US-FL
+3784,KPOB,medium_airport,Pope Field,US-NC
+3785,KPOE,medium_airport,Polk Army Air Field,US-LA
+3786,KPOU,medium_airport,Dutchess County Airport,US-NY
+3787,KPQI,medium_airport,Presque Isle International Airport,US-ME
+3788,KPRB,medium_airport,Paso Robles Municipal Airport,US-CA
+3789,KPRC,medium_airport,Prescott Regional Airport - Ernest A. Love Field,US-AZ
+3790,KPRX,medium_airport,Cox Field,US-TX
+20870,KPSC,medium_airport,Tri Cities Airport,US-WA
+3791,KPSM,medium_airport,Portsmouth International Airport at Pease,US-NH
+3792,KPSP,large_airport,Palm Springs International Airport,US-CA
+3793,KPTK,medium_airport,Oakland County International Airport,US-MI
+3794,KPUB,medium_airport,Pueblo Memorial Airport,US-CO
+20883,KPUW,medium_airport,Pullman-Moscow Regional Airport,US-WA
+3795,KPVD,large_airport,Rhode Island T. F. Green International Airport,US-RI
+20890,KPVU,medium_airport,Provo Municipal Airport,US-UT
+20896,KPWK,medium_airport,Chicago Executive Airport,US-IL
+3796,KPWM,large_airport,Portland International Jetport,US-ME
+3797,KPWT,medium_airport,Bremerton National Airport,US-WA
+3837,KRAL,medium_airport,Riverside Municipal Airport,US-CA
+3838,KRAP,medium_airport,Rapid City Regional Airport,US-SD
+3839,KRBL,medium_airport,Red Bluff Municipal Airport,US-CA
+3840,KRCA,medium_airport,Ellsworth Air Force Base,US-SD
+3841,KRDD,medium_airport,Redding Municipal Airport,US-CA
+3842,KRDG,medium_airport,Reading Regional Airport (Carl A Spaatz Field),US-PA
+3843,KRDM,medium_airport,Roberts Field,US-OR
+20922,KRDR,medium_airport,Grand Forks Air Force Base,US-ND
+3844,KRDU,large_airport,Raleigh-Durham International Airport,US-NC
+3845,KRFD,medium_airport,Chicago Rockford International Airport,US-IL
+3846,KRHI,medium_airport,Rhinelander Oneida County Airport,US-WI
+20927,KRHP,medium_airport,Western Carolina Regional Airport,US-NC
+3847,KRIC,large_airport,Richmond International Airport,US-VA
+20931,KRIL,medium_airport,Garfield County Regional Airport,US-CO
+3849,KRIV,medium_airport,March Air Reserve Base,US-CA
+20933,KRIW,medium_airport,Central Wyoming Regional Airport,US-WY
+20935,KRKD,medium_airport,Knox County Regional Airport,US-ME
+3850,KRKS,medium_airport,Southwest Wyoming Regional Airport,US-WY
+20940,KRME,medium_airport,Griffiss International Airport,US-NY
+3851,KRMG,medium_airport,Richard B Russell Airport,US-GA
+3852,KRND,medium_airport,Randolph Air Force Base,US-TX
+20944,KRNH,medium_airport,New Richmond Regional Airport,US-WI
+3853,KRNO,large_airport,Reno Tahoe International Airport,US-NV
+3854,KROA,medium_airport,Roanoke–Blacksburg Regional Airport,US-VA
+3855,KROC,large_airport,Frederick Douglass Greater Rochester International Airport,US-NY
+3856,KROW,medium_airport,Roswell Air Center Airport,US-NM
+20962,KRSL,medium_airport,Russell Municipal Airport,US-KS
+3857,KRST,medium_airport,Rochester International Airport,US-MN
+3858,KRSW,large_airport,Southwest Florida International Airport,US-FL
+3859,KRUT,medium_airport,Rutland - Southern Vermont Regional Airport,US-VT
+20972,KRVS,medium_airport,Tulsa Riverside Airport,US-OK
+20973,KRWF,medium_airport,Redwood Falls Municipal Airport,US-MN
+3860,KRWI,medium_airport,Rocky Mount Wilson Regional Airport,US-NC
+20974,KRWL,medium_airport,Rawlins Municipal Airport/Harvey Field,US-WY
+20981,KRYY,medium_airport,Cobb County International Airport-McCollum Field,US-GA
+3861,KSAC,medium_airport,Sacramento Executive Airport,US-CA
+21033,KSAF,medium_airport,Santa Fe Municipal Airport,US-NM
+3862,KSAN,large_airport,San Diego International Airport,US-CA
+3863,KSAT,large_airport,San Antonio International Airport,US-TX
+3864,KSAV,large_airport,Savannah Hilton Head International Airport,US-GA
+3865,KSAW,medium_airport,Marquette Sawyer Regional Airport,US-MI
+3866,KSBA,medium_airport,Santa Barbara Municipal Airport,US-CA
+3867,KSBD,large_airport,San Bernardino International Airport,US-CA
+3868,KSBN,medium_airport,South Bend International Airport,US-IN
+3869,KSBP,medium_airport,San Luis County Regional Airport,US-CA
+3870,KSBY,medium_airport,Salisbury Ocean City Wicomico Regional Airport,US-MD
+3871,KSCH,medium_airport,Schenectady County Airport,US-NY
+3872,KSCK,medium_airport,Stockton Metropolitan Airport,US-CA
+3873,KSDF,large_airport,Louisville Muhammad Ali International Airport,US-KY
+3874,KSDM,medium_airport,Brown Field Municipal Airport,US-CA
+21046,KSDY,medium_airport,Sidney - Richland Regional Airport,US-MT
+3875,KSEA,large_airport,Seattle–Tacoma International Airport,US-WA
+3876,KSFB,large_airport,Orlando Sanford International Airport,US-FL
+3877,KSFF,medium_airport,Felts Field,US-WA
+3878,KSFO,large_airport,San Francisco International Airport,US-CA
+3879,KSGF,medium_airport,Springfield Branson National Airport,US-MO
+3880,KSGH,medium_airport,Springfield-Beckley Municipal Airport,US-OH
+21061,KSGJ,medium_airport,Northeast Florida Regional Airport,US-FL
+21062,KSGR,medium_airport,Sugar Land Regional Airport,US-TX
+21065,KSGU,medium_airport,St George Regional Airport,US-UT
+21066,KSHD,medium_airport,Shenandoah Valley Regional Airport,US-VA
+3881,KSHR,medium_airport,Sheridan County Airport,US-WY
+3882,KSHV,medium_airport,Shreveport Regional Airport,US-LA
+3883,KSJC,large_airport,Mineta San Jose International Airport,US-CA
+3884,KSJT,medium_airport,San Angelo Regional Mathis Field,US-TX
+3885,KSKA,medium_airport,Fairchild Air Force Base,US-WA
+3886,KSKF,medium_airport,Lackland Air Force Base,US-TX
+21076,KSKX,medium_airport,Taos Regional Airport,US-NM
+3887,KSLC,large_airport,Salt Lake City International Airport,US-UT
+3888,KSLE,medium_airport,Salem-Willamette Valley Airport/McNary Field,US-OR
+3889,KSLI,medium_airport,Los Alamitos Army Air Field,US-CA
+3890,KSLK,medium_airport,Adirondack Regional Airport,US-NY
+3891,KSLN,medium_airport,Salina Municipal Airport,US-KS
+21085,KSME,medium_airport,Lake Cumberland Regional Airport,US-KY
+3892,KSMF,large_airport,Sacramento International Airport,US-CA
+21086,KSMN,medium_airport,Lemhi County Airport,US-ID
+21087,KSMO,medium_airport,Santa Monica Municipal Airport,US-CA
+3893,KSMX,medium_airport,Santa Maria Public Airport Captain G Allan Hancock Field,US-CA
+3894,KSNA,large_airport,John Wayne Orange County International Airport,US-CA
+3895,KSNS,medium_airport,Salinas Municipal Airport,US-CA
+21094,KSNY,medium_airport,Sidney Municipal Airport Lloyd W Carr Field,US-NE
+21095,KSOA,medium_airport,Sonora Municipal Airport,US-TX
+21097,KSOW,medium_airport,Show Low Regional Airport,US-AZ
+3897,KSPI,medium_airport,Abraham Lincoln Capital Airport,US-IL
+3898,KSPS,medium_airport,Wichita Falls Municipal Airport / Sheppard Air Force Base,US-TX
+21105,KSQL,medium_airport,San Carlos Airport,US-CA
+3899,KSRQ,large_airport,Sarasota Bradenton International Airport,US-FL
+3900,KSRR,medium_airport,Sierra Blanca Regional Airport,US-NM
+3901,KSSC,medium_airport,Shaw Air Force Base,US-SC
+21109,KSSF,medium_airport,Stinson Municipal Airport,US-TX
+3902,KSSI,medium_airport,St Simons Island Airport,US-GA
+3903,KSTC,medium_airport,Saint Cloud Regional Airport,US-MN
+3904,KSTJ,medium_airport,Rosecrans Memorial Airport,US-MO
+3905,KSTL,large_airport,St. Louis Lambert International Airport,US-MO
+3906,KSTP,medium_airport,Saint Paul Downtown Holman Field,US-MN
+21114,KSTS,medium_airport,Charles M. Schulz Sonoma County Airport,US-CA
+21118,KSUN,medium_airport,Friedman Memorial Airport,US-ID
+3907,KSUS,medium_airport,Spirit of St Louis Airport,US-MO
+3908,KSUU,medium_airport,Travis Air Force Base,US-CA
+3909,KSUX,medium_airport,Sioux Gateway Airport / Brigadier General Bud Day Field,US-IA
+29695,KSUZ,medium_airport,Saline County Regional Airport,US-AR
+21121,KSVC,medium_airport,Grant County Airport,US-NM
+3910,KSVN,medium_airport,Hunter Army Air Field,US-GA
+3911,KSWF,medium_airport,New York Stewart International Airport,US-NY
+3912,KSWO,medium_airport,Stillwater Regional Airport,US-OK
+3913,KSYR,large_airport,Syracuse Hancock International Airport,US-NY
+3914,KSZL,medium_airport,Whiteman Air Force Base,US-MO
+3915,KTBN,medium_airport,Waynesville-St. Robert Regional Airport-Forney Field,US-MO
+3916,KTCC,medium_airport,Tucumcari Municipal Airport,US-NM
+3917,KTCL,medium_airport,Tuscaloosa National Airport,US-AL
+3918,KTCM,medium_airport,McChord Air Force Base,US-WA
+3919,KTCS,medium_airport,Truth or Consequences Municipal Airport,US-NM
+3920,KTEB,medium_airport,Teterboro Airport,US-NJ
+21188,KTEX,medium_airport,Telluride Regional Airport,US-CO
+3921,KTIK,medium_airport,Tinker Air Force Base,US-OK
+3922,KTIW,medium_airport,Tacoma Narrows Airport,US-WA
+3923,KTIX,medium_airport,Space Coast Regional Airport,US-FL
+3924,KTLH,medium_airport,Tallahassee International Airport,US-FL
+21204,KTMB,medium_airport,Miami Executive Airport,US-FL
+21212,KTOI,medium_airport,Troy Municipal Airport at N Kenneth Campbell Field,US-AL
+3925,KTOL,medium_airport,Eugene F. Kranz Toledo Express Airport,US-OH
+21213,KTOP,medium_airport,Philip Billard Municipal Airport,US-KS
+3926,KTPA,large_airport,Tampa International Airport,US-FL
+21216,KTPH,medium_airport,Tonopah Airport,US-NV
+3927,KTPL,medium_airport,Draughon Miller Central Texas Regional Airport,US-TX
+3928,KTRI,medium_airport,Tri-Cities Regional TN/VA Airport,US-TN
+21220,KTRK,medium_airport,Truckee Tahoe Airport,US-CA
+21222,KTRM,medium_airport,Jacqueline Cochran Regional Airport,US-CA
+21228,KTTD,medium_airport,Portland Troutdale Airport,US-OR
+3929,KTTN,medium_airport,Trenton Mercer Airport,US-NJ
+21230,KTTS,medium_airport,Space Florida Launch and Landing Facility,US-FL
+3930,KTUL,large_airport,Tulsa International Airport,US-OK
+3931,KTUP,medium_airport,Tupelo Regional Airport,US-MS
+3932,KTUS,large_airport,Tucson International Airport,US-AZ
+3933,KTVC,medium_airport,Cherry Capital Airport,US-MI
+21232,KTVF,medium_airport,Thief River Falls Regional Airport,US-MN
+3934,KTVL,medium_airport,Lake Tahoe Airport,US-CA
+3935,KTWF,medium_airport,Joslin Field Magic Valley Regional Airport,US-ID
+3936,KTXK,medium_airport,Texarkana Regional Airport (Webb Field),US-AR
+3937,KTYR,medium_airport,Tyler Pounds Regional Airport,US-TX
+3938,KTYS,large_airport,McGhee Tyson Airport,US-TN
+21261,KU42,medium_airport,South Valley Regional Airport,US-UT
+21280,KUAO,medium_airport,Aurora State Airport,US-OR
+3940,KUIN,medium_airport,Quincy Regional Airport Baldwin Field,US-IL
+3941,KUKI,medium_airport,Ukiah Municipal Airport,US-CA
+21300,KUNV,medium_airport,State College Regional Airport,US-PA
+3942,KUOX,medium_airport,University Oxford Airport,US-MS
+21304,KUTS,medium_airport,Huntsville Regional Airport,US-TX
+21305,KUUU,medium_airport,Newport State Airport,US-RI
+3943,KVAD,medium_airport,Moody Air Force Base,US-GA
+3944,KVBG,medium_airport,Vandenberg Space Force Base,US-CA
+3945,KVCT,medium_airport,Victoria Regional Airport,US-TX
+21318,KVEL,medium_airport,Vernal Regional Airport,US-UT
+21321,KVGT,medium_airport,North Las Vegas Airport,US-NV
+21325,KVIS,medium_airport,Visalia Municipal Airport,US-CA
+3946,KVLD,medium_airport,Valdosta Regional Airport,US-GA
+21333,KVNY,medium_airport,Van Nuys Airport,US-CA
+3947,KVOK,medium_airport,Volk Field,US-WI
+3948,KVPS,medium_airport,Destin-Fort Walton Beach Airport,US-FL
+3949,KVPZ,medium_airport,Porter County Municipal Airport,US-IN
+21335,KVQQ,medium_airport,Cecil Airport,US-FL
+3950,KVRB,medium_airport,Vero Beach Regional Airport,US-FL
+21339,KVTN,medium_airport,Miller Field,US-NE
+21358,KW63,medium_airport,Lake Country Regional Airport,US-VA
+21375,KWJF,medium_airport,General William J Fox Airfield,US-CA
+21379,KWMC,medium_airport,Winnemucca Municipal Airport,US-NV
+3951,KWRB,medium_airport,Robins Air Force Base,US-GA
+3952,KWRI,medium_airport,Mc Guire Air Force Base,US-NJ
+3953,KWRL,medium_airport,Worland Municipal Airport,US-WY
+21382,KWST,medium_airport,Westerly State Airport,US-RI
+3954,KWWD,medium_airport,Cape May County Airport,US-NJ
+21386,KWWR,medium_airport,West Woodward Airport,US-OK
+3955,KWYS,medium_airport,Yellowstone Airport,US-MT
+21403,KX51,medium_airport,Miami Homestead General Aviation Airport,US-FL
+3956,KXMR,medium_airport,Cape Canaveral SFS Skid Strip,US-FL
+21410,KXNA,medium_airport,Northwest Arkansas National Airport,US-AR
+28148,KXTA,medium_airport,Homey (Area 51) Airport,US-NV
+324440,KXWA,medium_airport,Williston Basin International Airport,US-ND
+3957,KYIP,medium_airport,Willow Run Airport,US-MI
+3958,KYKM,medium_airport,Yakima Air Terminal McAllister Field,US-WA
+3959,KYKN,medium_airport,Chan Gurney Municipal Airport,US-SD
+3960,KYNG,medium_airport,Youngstown Warren Regional Airport,US-OH
+3967,KZZV,medium_airport,Zanesville Municipal Airport,US-OH
+5336,PAAQ,medium_airport,"Warren ""Bud"" Woods Palmer Municipal Airport",US-AK
+5337,PABA,medium_airport,Barter Island Long Range Radar Station Airport,US-AK
+5338,PABE,medium_airport,Bethel Airport,US-AK
+5339,PABI,medium_airport,Allen Army Airfield,US-AK
+5342,PABR,medium_airport,Wiley Post Will Rogers Memorial Airport,US-AK
+5344,PABV,medium_airport,Birchwood Airport,US-AK
+5345,PACD,medium_airport,Cold Bay Airport,US-AK
+5346,PACL,medium_airport,Clear Airport,US-AK
+5348,PACV,medium_airport,Merle K (Mudhole) Smith Airport,US-AK
+5349,PACZ,medium_airport,Cape Romanzof LRRS Airport,US-AK
+5350,PADE,medium_airport,Deering Airport,US-AK
+16092,PADK,medium_airport,Adak Airport,US-AK
+5351,PADL,medium_airport,Dillingham Airport,US-AK
+5353,PADQ,medium_airport,Kodiak Airport,US-AK
+5354,PADU,medium_airport,Tom Madsen (Dutch Harbor) Airport,US-AK
+5355,PAED,medium_airport,Elmendorf Air Force Base,US-AK
+5356,PAEH,medium_airport,Cape Newenham LRRS Airport,US-AK
+5357,PAEI,medium_airport,Eielson Air Force Base,US-AK
+5358,PAEM,medium_airport,Emmonak Airport,US-AK
+5359,PAEN,medium_airport,Kenai Municipal Airport,US-AK
+5360,PAFA,medium_airport,Fairbanks International Airport,US-AK
+5361,PAFB,medium_airport,Ladd Army Airfield,US-AK
+5362,PAFE,medium_airport,Kake Airport,US-AK
+5363,PAFM,medium_airport,Ambler Airport,US-AK
+5365,PAGA,medium_airport,Edward G. Pitka Sr Airport,US-AK
+5367,PAGK,medium_airport,Gulkana Airport,US-AK
+5368,PAGM,medium_airport,Gambell Airport,US-AK
+5369,PAGS,medium_airport,Gustavus Airport,US-AK
+17619,PAHC,medium_airport,Holy Cross Airport,US-AK
+5370,PAHL,medium_airport,Huslia Airport,US-AK
+5372,PAHN,medium_airport,Haines Airport,US-AK
+5373,PAHO,medium_airport,Homer Airport,US-AK
+5375,PAII,medium_airport,Egegik Airport,US-AK
+5376,PAIK,medium_airport,Bob Baker Memorial Airport,US-AK
+5377,PAIL,medium_airport,Iliamna Airport,US-AK
+5378,PAIM,medium_airport,Indian Mountain LRRS Airport,US-AK
+5379,PAJN,medium_airport,Juneau International Airport,US-AK
+5380,PAKN,medium_airport,King Salmon Airport,US-AK
+5381,PAKP,medium_airport,Anaktuvuk Pass Airport,US-AK
+5382,PAKT,medium_airport,Ketchikan International Airport,US-AK
+5383,PAKW,medium_airport,Klawock Airport,US-AK
+5385,PALU,medium_airport,Cape Lisburne LRRS Airport,US-AK
+21844,PAMC,medium_airport,McGrath Airport,US-AK
+5386,PAMR,medium_airport,Merrill Field,US-AK
+5387,PAMY,medium_airport,Mekoryuk Airport,US-AK
+5388,PANC,large_airport,Ted Stevens Anchorage International Airport,US-AK
+16291,PANI,medium_airport,Aniak Airport,US-AK
+5390,PANN,medium_airport,Nenana Municipal Airport,US-AK
+5391,PANT,medium_airport,Annette Island Airport,US-AK
+5392,PANV,medium_airport,Anvik Airport,US-AK
+5393,PAOM,medium_airport,Nome Airport,US-AK
+5394,PAOR,medium_airport,Northway Airport,US-AK
+5395,PAOT,medium_airport,Ralph Wien Memorial Airport,US-AK
+5396,PAPB,medium_airport,St George Airport,US-AK
+5397,PAPC,medium_airport,Port Clarence Coast Guard Station,US-AK
+5398,PAPG,medium_airport,Petersburg James A Johnson Airport,US-AK
+5399,PAPH,medium_airport,Port Heiden Airport,US-AK
+5400,PAPM,medium_airport,Platinum Airport,US-AK
+5401,PAQT,medium_airport,Nuiqsut Airport,US-AK
+5402,PARC,medium_airport,Arctic Village Airport,US-AK
+5403,PARY,medium_airport,Ruby Airport,US-AK
+5404,PASA,medium_airport,Savoonga Airport,US-AK
+5405,PASC,medium_airport,Deadhorse Airport,US-AK
+5406,PASD,medium_airport,Sand Point Airport,US-AK
+5408,PASI,medium_airport,Sitka Rocky Gutierrez Airport,US-AK
+5410,PASN,medium_airport,St Paul Island Airport,US-AK
+5411,PASV,medium_airport,Sparrevohn LRRS Airport,US-AK
+5412,PASX,medium_airport,Soldotna Airport,US-AK
+5413,PASY,medium_airport,Eareckson Air Station,US-AK
+24910,PATK,medium_airport,Talkeetna Airport,US-AK
+5415,PATL,medium_airport,Tatalina LRRS Airport,US-AK
+5416,PATQ,medium_airport,Atqasuk Edward Burnell Sr Memorial Airport,US-AK
+5389,PAUN,medium_airport,Unalakleet Airport,US-AK
+5418,PAVD,medium_airport,Valdez Pioneer Field,US-AK
+5420,PAWD,medium_airport,Seward Airport,US-AK
+5421,PAWG,medium_airport,Wrangell Airport,US-AK
+5422,PAWI,medium_airport,Wainwright Airport,US-AK
+5424,PAWS,medium_airport,Wasilla Airport,US-AK
+26343,PAYA,medium_airport,Yakutat Airport,US-AK
+5429,PFYU,medium_airport,Fort Yukon Airport,US-AK
+5441,PHBK,medium_airport,Barking Sands Airport,US-HI
+5444,PHHN,medium_airport,Hana Airport,US-HI
+335883,PHIK,medium_airport,Hickam Air Force Base,US-HI
+5446,PHJH,medium_airport,Kapalua Airport,US-HI
+5447,PHJR,medium_airport,Kalaeloa Airport,US-HI
+5448,PHKO,large_airport,Ellison Onizuka Kona International Airport at Keāhole,US-HI
+5449,PHLI,large_airport,Lihue Airport,US-HI
+5450,PHMK,medium_airport,Molokai Airport,US-HI
+5451,PHMU,medium_airport,Waimea Kohala Airport,US-HI
+5452,PHNG,medium_airport,Kaneohe Bay MCAS (Marion E. Carl Field) Airport,US-HI
+5453,PHNL,large_airport,Daniel K. Inouye International Airport,US-HI
+5454,PHNY,medium_airport,Lanai Airport,US-HI
+5455,PHOG,large_airport,Kahului International Airport,US-HI
+5457,PHTO,medium_airport,Hilo International Airport,US-HI
+5495,PPIZ,medium_airport,Point Lay LRRS Airport,US-AK
+610936,US-13052,medium_airport,Nw Quik Pull,US-WA

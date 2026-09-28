@@ -1,0 +1,32 @@
+[project]
+name = "wonderful-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Itay Singer", email = "itayz1230@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "opensky-api @ git+https://github.com/openskynetwork/opensky-api.git#subdirectory=python",
+    "pandas>=2.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    "requests>=2.31",
+]
+
+[project.scripts]
+wonderful-agent = "wonderful_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1",
+]
