@@ -1,5 +1,5 @@
 def main() -> None:
-    print("wonderful-agent: not implemented yet")
+    print("airports-agent: not implemented yet")
 
 
 if __name__ == "__main__":

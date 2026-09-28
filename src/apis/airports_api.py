@@ -1,18 +1,20 @@
 import io
 from datetime import date
-from pathlib import Path
 from typing import List, Optional
 
 import pandas as pd
 import requests
 from pydantic import BaseModel
 
+from airports_agent.settings.settings import load_settings
+
 BASE_URL = "https://davidmegginson.github.io/ourairports-data"
 UNITED_STATES_COUNTRY_CODE = "US"
 REQUIRED_AIRPORT_TYPES = ("large_airport", "medium_airport")
 AIRPORTS_COLUMNS = ["id", "ident", "type", "name", "iso_region"]
 RUNWAYS_COLUMNS = ["id", "airport_ref", "airport_ident", "closed"]
-DATA_DIR = Path(__file__).parent
+DATA_DIR = load_settings().data_dir_path
+DATA_DIR.mkdir(parents=True, exist_ok=True)
 AIRPORTS_FILE = DATA_DIR / "airports.csv"
 RUNWAYS_FILE = DATA_DIR / "runways.csv"
 

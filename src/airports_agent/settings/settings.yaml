@@ -1,0 +1,22 @@
+data_dir: data
+
+capacity:
+  flights_per_runway_per_hour: 20
+
+analysis:
+  window_days: 3
+  peak_hours_per_day: 3
+
+congestion_levels:
+  low_below: 50
+  moderate_below: 80
+  high_up_to: 100
+
+long_haul:
+  min_duration_hours: 5
+
+unmet_demand:
+  practical_capacity_pct: 85
+
+llm:
+  model: gemini-3.8-flash
