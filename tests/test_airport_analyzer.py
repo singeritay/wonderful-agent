@@ -175,35 +175,35 @@ def test_get_capacity_unknown_when_no_runways():
     assert report.practical_capacity_per_hour is None
 
 
-def test_get_departure_count():
+def test_get_flights_count_departures():
     airport = Airport(code="KBOS", name="Boston Logan", region="US-MA", num_of_runways=2)
     analyzer, flights_api = make_analyzer(
         airport,
         get_departures=lambda code, begin, end: [make_flight(begin) for _ in range(3)],
     )
 
-    report = analyzer.get_departure_count()
+    report = analyzer.get_flights_count(Direction.DEPARTURES)
 
     assert report.direction == Direction.DEPARTURES
     assert report.total == 3
     flights_api.get_arrivals.assert_not_called()
 
 
-def test_get_arrival_count():
+def test_get_flights_count_arrivals():
     airport = Airport(code="KBOS", name="Boston Logan", region="US-MA", num_of_runways=2)
     analyzer, flights_api = make_analyzer(
         airport,
         get_arrivals=lambda code, begin, end: [make_flight(begin) for _ in range(5)],
     )
 
-    report = analyzer.get_arrival_count()
+    report = analyzer.get_flights_count(Direction.ARRIVALS)
 
     assert report.direction == Direction.ARRIVALS
     assert report.total == 5
     flights_api.get_departures.assert_not_called()
 
 
-def test_get_long_haul_departure_count():
+def test_get_flights_count_long_haul_departures():
     airport = Airport(code="PANC", name="Anchorage", region="US-AK", num_of_runways=3)
     analyzer, _ = make_analyzer(
         airport,
@@ -214,14 +214,14 @@ def test_get_long_haul_departure_count():
         settings=make_settings(min_duration_hours=5),
     )
 
-    report = analyzer.get_long_haul_departure_count()
+    report = analyzer.get_flights_count(Direction.DEPARTURES, long_haul=True)
 
     assert report.direction == Direction.DEPARTURES
     assert report.long_haul_count == 1
     assert report.min_duration_hours == 5
 
 
-def test_get_long_haul_arrival_count():
+def test_get_flights_count_long_haul_arrivals():
     airport = Airport(code="PANC", name="Anchorage", region="US-AK", num_of_runways=3)
     analyzer, _ = make_analyzer(
         airport,
@@ -231,7 +231,7 @@ def test_get_long_haul_arrival_count():
         settings=make_settings(min_duration_hours=5),
     )
 
-    report = analyzer.get_long_haul_arrival_count()
+    report = analyzer.get_flights_count(Direction.ARRIVALS, long_haul=True)
 
     assert report.direction == Direction.ARRIVALS
     assert report.long_haul_count == 1

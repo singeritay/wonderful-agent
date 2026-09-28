@@ -37,8 +37,8 @@ class AirportAnalyzer:
         self._flights_api = FlightsAPI()
         self._settings = settings or load_settings()
         self.window_days = self._settings.analysis.window_days
-        self.window_start = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
-        self.window_end = self.window_start + timedelta(days=self.window_days)
+        self.window_end = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+        self.window_start = self.window_end - timedelta(days=self.window_days)
 
 
     def get_congestion(self) -> CongestionReport:
