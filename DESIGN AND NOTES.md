@@ -42,19 +42,20 @@ In an earlier stage I did expose a ranking tool, but I wanted to allow as flexib
 
 
 ## Assumptions and tradeoffs
-1. Passengers: We're assuming all flights are full - no way to figure out passengers occupation. The analysis is flight-based (movements), not passenger-based.
-2. Scope: US large and medium airports from OurAirports. Small airports, heliports and
+1. No proper error handling in API calls. For the scope of the task, if an API call fails, it will print a message and return empty data.
+2. Passengers: We're assuming all flights are full - no way to figure out passengers occupation. The analysis is flight-based (movements), not passenger-based.
+3. Scope: US large and medium airports from OurAirports. Small airports, heliports and
    seaplane bases are excluded.
-3. Capacity: Airport capacity is calculated as open runways x 20 flights per runway per hour. Closed runways and helipads are excluded. This ignores runway configuration (parallel vs. crossing), weather, ATC procedures, gates and terminal size.
-4. Airports are open 24/7. this is relevant for calculating the average congestion per hour.
-5. Long-haul = a flight longer than 5 hours, measured from OpenSky's firstSeen/lastSeen
+4. Capacity: Airport capacity is calculated as open runways x 20 flights per runway per hour. Closed runways and helipads are excluded. This ignores runway configuration (parallel vs. crossing), weather, ATC procedures, gates and terminal size.
+5. Airports are open 24/7. this is relevant for calculating the average congestion per hour.
+6. Long-haul = a flight longer than 5 hours, measured from OpenSky's firstSeen/lastSeen
     timestamps
-6. Unmet demand can't be observed directly - flights that didn't happen aren't in any data. The proxy is observed peak traffic compared with practical and theoretical capacity.
-7. Limit of 10 airports per request of the agent. This limit prevents too many calls to the flights API (which is limited). There are a couple of solutions for it:
+7. Unmet demand can't be observed directly - flights that didn't happen aren't in any data. The proxy is observed peak traffic compared with practical and theoretical capacity.
+8. Limit of 10 airports per request of the agent. This limit prevents too many calls to the flights API (which is limited). There are a couple of solutions for it:
 - A: Move to a deterministic caclulation that reduces the amount of calls to the API (my favorite, existed in earlier version) <br/>
 - B: Pre-filter candidates cheaply by runway count before fetching any flights. <br/>
 - C: Accept slower answers and rate-limit risk
-8. A fresh MCP connection per chat turn in the Streamlit UI, with Gemini's chat history
+9. A fresh MCP connection per chat turn in the Streamlit UI, with Gemini's chat history
    carried between turns in st.session_state. On one hand it's simple and robust with Streamlit's rerun-the-whole-script model. The minus is a small overhead each turn (subprocess start and tool listing).
 
 
