@@ -119,6 +119,16 @@ def test_get_congestion_uses_configured_window_days():
     assert report.window_end.time() == datetime.min.time()
 
 
+def test_constructor_window_days_override_takes_precedence_over_settings():
+    airport = Airport(code="KBOS", name="Boston Logan", region="US-MA", num_of_runways=2)
+
+    with patch("airports_agent.analytics.airport_analyzer.FlightsAPI"):
+        analyzer = AirportAnalyzer(airport, make_settings(window_days=7), window_days=2)
+
+    assert analyzer.window_days == 2
+    assert analyzer.window_end - analyzer.window_start == timedelta(days=2)
+
+
 def test_get_congestion_zero_runways_is_unknown():
     airport = Airport(code="ZZZ", name="No Runways", region="US-XX", num_of_runways=0)
     analyzer, _ = make_analyzer(airport)

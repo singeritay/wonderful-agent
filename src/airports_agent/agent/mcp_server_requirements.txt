@@ -1,0 +1,14 @@
+The MCP should expose tools relevant to the airport agent, and explain themselves good.
+The tools should be based on the reports from AirportAnalyzer
+The tools should expose the assumptions
+The tools should explain what is included on the results (explain the fields of a Report)
+
+The tools needed:
+- get_airport_by_name(airport_name: str) -> Airport
+- get airport_by_region(region: str) -> List[Airport]
+- get_region_by_airport(airport_code: str) -> str (region name)
+- get_airport_info(airport_code: str) -> Airport
+- get_airport_flights_count(airport_code: str, last_n_days: int) -> List[Flight] - categorize the flights by arrival and departure, and return the counts for each
+- get_airport_long_fligths_count(airport_code: str, last_n_days: int) -> List[Flight] - categorize the flights by arrival and departure, and return the counts for each
+- get_congestion_level(airport_code: str, last_n_days: int) -> CongestionLevel - return the congestion level of the airport based on the flights count and long flights count
+- get_airport_capacity(airport_code: str) -> CapacityReport - return the capacity of the airport. Includeing the practical capacity, and the real one. this might help figuring out what airports are over capacity and which are not. The practical capacity is the one that the airport can handle, and the real one is the one that the airport actually handled.

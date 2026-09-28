@@ -28,7 +28,12 @@ LONG_HAUL_ASSUMPTION = (
 class AirportAnalyzer:
     """Deterministic analysis for a single airport, over its configured analysis window."""
 
-    def __init__(self, airport: Union[Airport, str], settings: Optional[Settings] = None):
+    def __init__(
+        self,
+        airport: Union[Airport, str],
+        settings: Optional[Settings] = None,
+        window_days: Optional[int] = None,
+    ):
         if isinstance(airport, str):
             airport = AirportsAPI().get_airport_by_code(airport)
 
@@ -36,7 +41,7 @@ class AirportAnalyzer:
         self.airport_code = airport.code
         self._flights_api = FlightsAPI()
         self._settings = settings or load_settings()
-        self.window_days = self._settings.analysis.window_days
+        self.window_days = window_days or self._settings.analysis.window_days
         self.window_end = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
         self.window_start = self.window_end - timedelta(days=self.window_days)
 
@@ -77,19 +82,12 @@ class AirportAnalyzer:
             assumptions=self._create_assumptions(),
         )
 
-    #CR: change those 4 functions to get_flights_count(direction, long_haul:bool=False) and return the appropriate report
-    #this function will be called only by the MCP
-    def get_departure_count(self) -> FlightCountReport:
-        return self._flight_count_report(Direction.DEPARTURES)
-
-    def get_arrival_count(self) -> FlightCountReport:
-        return self._flight_count_report(Direction.ARRIVALS)
-
-    def get_long_haul_departure_count(self) -> LongHaulFlightCountReport:
-        return self._long_haul_count_report(Direction.DEPARTURES)
-
-    def get_long_haul_arrival_count(self) -> LongHaulFlightCountReport:
-        return self._long_haul_count_report(Direction.ARRIVALS)
+    def get_flights_count(
+        self, direction: Direction, long_haul: bool = False
+    ) -> Union[FlightCountReport, LongHaulFlightCountReport]:
+        if long_haul:
+            return self._long_haul_count_report(direction)
+        return self._flight_count_report(direction)
 
     def _flight_count_report(self, direction: Direction) -> FlightCountReport:
         flights = self._get_flights(direction)

@@ -49,3 +49,19 @@ class CapacityReport(BaseModel):
     average_flights_per_hour: float
     peak_hour_average_flights_per_hour: float
     assumptions: List[str]
+
+
+class FlightsCountResult(BaseModel):
+    """Bundles per-direction FlightCountReports. A direction is omitted (None) when the caller
+    asked for only the other direction."""
+
+    departures: Optional[FlightCountReport] = None
+    arrivals: Optional[FlightCountReport] = None
+
+
+class LongHaulFlightsCountResult(BaseModel):
+    """Bundles per-direction LongHaulFlightCountReports. A direction is omitted (None) when the
+    caller asked for only the other direction."""
+
+    departures: Optional[LongHaulFlightCountReport] = None
+    arrivals: Optional[LongHaulFlightCountReport] = None
