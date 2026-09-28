@@ -1,8 +1,8 @@
 [project]
 name = "airports-agent"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+description = "A chat agent that helps analysts spot US airports worth investing in"
+readme = "DESIGN_AND_NOTES.md"
 authors = [
     { name = "Itay Singer", email = "itayz1230@gmail.com" }
 ]

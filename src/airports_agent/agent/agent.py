@@ -121,7 +121,7 @@ class AirportsAgent:
                 if e.code not in RETRYABLE_STATUS_CODES or attempt == MAX_RETRIES - 1:
                     print(f"[model] Gemini call failed ({e.code}): {e.message}")
                     return None
-                await asyncio.sleep(RETRY_BACKOFF_SECONDS * attempt + 1)
+                await asyncio.sleep(RETRY_BACKOFF_SECONDS * (attempt + 1))
             except Exception as e:
                 print(f"[model] Gemini call failed: {e}")
                 return None

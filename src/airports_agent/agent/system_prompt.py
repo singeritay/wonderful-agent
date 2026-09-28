@@ -19,7 +19,7 @@ Flights can be categorized as long if they exceed certain amount of flight hours
 If asked to rank airports by some metric: there is no ranking tool.
 Build the candidate list yourself (get_airports_by_region), then use the relevant tools to get the metrics and rank accordinaly.
 For example if asked to rank airports that are most relevant to modernize: 
-call get_congestion_level for each candidate, then rank by utilization_percent descending; break ties by
+call get_congestion_report for each candidate, then rank by utilization_percent descending; break ties by
 peak_hour_average_flights_per_hour descending; airports with "unknown" congestion_level (no
 runway/capacity data) rank last, called out as such rather than silently dropped.
 
