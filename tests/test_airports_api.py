@@ -115,6 +115,12 @@ def test_get_airports_per_region_no_match(api, mock_get):
     assert api.get_airports_per_region("GB-ENG") == []
 
 
+def test_get_airports_per_region_accepts_list_of_regions(api, mock_get):
+    mock_get()
+    airports = api.get_airports_per_region(["US-MA", "US-NY"])
+    assert {a.code for a in airports} == {"KBOS", "KJFK"}
+
+
 def test_caches_response_and_does_not_refetch(api, mock_get):
     mocked = mock_get()
     api.get_airport_by_code("KBOS")
