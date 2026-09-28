@@ -3,8 +3,8 @@ from unittest.mock import patch
 
 import pytest
 
-from apis.airports_api import Airport, AirportNotFoundError
-from apis.flights_api import Direction, Flight
+from airports_agent.apis.airports_api import Airport, AirportNotFoundError
+from airports_agent.apis.flights_api import Direction, Flight
 from airports_agent.analytics.airport_analyzer import AirportAnalyzer
 from airports_agent.settings.settings import (
     AnalysisSettings,
@@ -13,7 +13,6 @@ from airports_agent.settings.settings import (
     LlmSettings,
     LongHaulSettings,
     Settings,
-    UnmetDemandSettings,
 )
 
 
@@ -29,13 +28,12 @@ def make_settings(
 ):
     return Settings(
         data_dir="data",
-        capacity=CapacitySettings(flights_per_runway_per_hour=capacity_per_runway),
+        capacity=CapacitySettings(flights_per_runway_per_hour=capacity_per_runway, practical_capacity_pct=practical_capacity_pct),
         analysis=AnalysisSettings(window_days=window_days, peak_hours_per_day=peak_hours_per_day),
         congestion_levels=CongestionLevelSettings(
             low_below=low_below, moderate_below=moderate_below, high_up_to=high_up_to
         ),
         long_haul=LongHaulSettings(min_duration_hours=min_duration_hours),
-        unmet_demand=UnmetDemandSettings(practical_capacity_pct=practical_capacity_pct),
         llm=LlmSettings(model="test-model"),
     )
 

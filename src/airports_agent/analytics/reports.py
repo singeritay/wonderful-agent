@@ -3,8 +3,8 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from apis.airports_api import Airport
-from apis.flights_api import Direction
+from airports_agent.apis.airports_api import Airport
+from airports_agent.apis.flights_api import Direction
 from airports_agent.analytics.metrics import CongestionLevel
 
 

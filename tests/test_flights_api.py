@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 import pytest
 
-from apis import flights_api as flights_api_module
-from apis.flights_api import Flight, FlightsAPI
+from airports_agent.apis import flights_api as flights_api_module
+from airports_agent.apis.flights_api import Flight, FlightsAPI
 
 
 def make_flight_data(icao24="abc123", callsign="UAL123  ", dep="KBOS", arr="KJFK",
@@ -25,7 +25,7 @@ def isolate_flights_cache(tmp_path, monkeypatch):
     monkeypatch.setattr(flights_api_module, "FLIGHTS_CACHE_DIR", tmp_path / "flights")
 
 
-@patch("apis.flights_api.OpenSkyApi")
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_departures_maps_flight_data_to_flight(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = [make_flight_data()]
 
@@ -46,7 +46,7 @@ def test_get_departures_maps_flight_data_to_flight(mock_opensky_api_cls):
     assert flight.arrival_time == datetime.fromtimestamp(1700003600, tz=timezone.utc)
 
 
-@patch("apis.flights_api.OpenSkyApi")
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_departures_blank_callsign_becomes_none(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = [
         make_flight_data(callsign="   ")
@@ -62,7 +62,7 @@ def test_get_departures_blank_callsign_becomes_none(mock_opensky_api_cls):
     assert flights[0].call_sign is None
 
 
-@patch("apis.flights_api.OpenSkyApi")
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_departures_handles_none_response(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = None
 
@@ -76,7 +76,7 @@ def test_get_departures_handles_none_response(mock_opensky_api_cls):
     assert flights == []
 
 
-@patch("apis.flights_api.OpenSkyApi")
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_departures_chunks_by_max_window(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = []
 
@@ -89,17 +89,7 @@ def test_get_departures_chunks_by_max_window(mock_opensky_api_cls):
     assert mock_opensky_api_cls.return_value.get_departures_by_airport.call_count == 2
 
 
-@patch("apis.flights_api.OpenSkyApi")
-def test_get_recent_departures_uses_days_window(mock_opensky_api_cls):
-    mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = []
-
-    api = FlightsAPI(client_id="id", client_secret="secret")
-    api.get_recent_departures("KBOS", days=3)
-
-    assert mock_opensky_api_cls.return_value.get_departures_by_airport.call_count == 3
-
-
-@patch("apis.flights_api.OpenSkyApi")
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_arrivals_maps_flight_data_to_flight(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_arrivals_by_airport.return_value = [make_flight_data()]
 
@@ -116,17 +106,7 @@ def test_get_arrivals_maps_flight_data_to_flight(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.assert_not_called()
 
 
-@patch("apis.flights_api.OpenSkyApi")
-def test_get_recent_arrivals_uses_days_window(mock_opensky_api_cls):
-    mock_opensky_api_cls.return_value.get_arrivals_by_airport.return_value = []
-
-    api = FlightsAPI(client_id="id", client_secret="secret")
-    api.get_recent_arrivals("KBOS", days=2)
-
-    assert mock_opensky_api_cls.return_value.get_arrivals_by_airport.call_count == 2
-
-
-@patch("apis.flights_api.OpenSkyApi")
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_departures_caches_full_past_utc_day(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = [make_flight_data()]
 
@@ -139,14 +119,3 @@ def test_get_departures_caches_full_past_utc_day(mock_opensky_api_cls):
 
     assert mock_opensky_api_cls.return_value.get_departures_by_airport.call_count == 1
     assert first == second
-
-
-@patch("apis.flights_api.OpenSkyApi")
-def test_get_recent_departures_does_not_use_cache(mock_opensky_api_cls):
-    mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = []
-
-    api = FlightsAPI(client_id="id", client_secret="secret")
-    api.get_recent_departures("KBOS", days=1)
-    api.get_recent_departures("KBOS", days=1)
-
-    assert mock_opensky_api_cls.return_value.get_departures_by_airport.call_count == 2

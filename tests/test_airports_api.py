@@ -2,8 +2,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from apis import airports_api as airports_api_module
-from apis.airports_api import Airport, AirportNotFoundError, AirportsAPI
+from airports_agent.apis import airports_api as airports_api_module
+from airports_agent.apis.airports_api import Airport, AirportNotFoundError, AirportsAPI
 
 AIRPORTS_CSV = (
     "id,ident,type,name,iso_country,iso_region,iata_code,municipality\n"

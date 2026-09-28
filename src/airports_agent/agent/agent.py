@@ -42,7 +42,7 @@ def _mcp_tools_to_gemini_tool(mcp_tools: List[McpTool]) -> types.Tool:
 class AirportsAgent:
     """Async context manager: launches the airports MCP server as a stdio subprocess and holds a
     Gemini chat session. Tool calls Gemini requests are executed against the live MCP session and
-    fed back manually (see _mcp_tools_to_gemini_tool for why).
+    fed back manually.
 
     Usage:
         async with AirportsAgent() as agent:
@@ -56,7 +56,7 @@ class AirportsAgent:
         self._client = genai.Client()
         self._model = settings.llm.model
         self._exit_stack = AsyncExitStack()
-        self._session: ClientSession = None
+        self._session: Optional[ClientSession] = None
         self._history = history
         self.chat = None
         self.last_tool_calls: List[Dict[str, Any]] = []
@@ -118,7 +118,7 @@ class AirportsAgent:
             except genai_errors.APIError as e:
                 if e.code not in RETRYABLE_STATUS_CODES or attempt == MAX_RETRIES - 1:
                     raise
-                await asyncio.sleep(RETRY_BACKOFF_SECONDS * attempt)
+                await asyncio.sleep(RETRY_BACKOFF_SECONDS * attempt + 1)
 
     @staticmethod
     def _result_text(result) -> str:

@@ -12,8 +12,8 @@ from typing import List, Optional, Union
 
 from mcp.server.fastmcp import FastMCP
 
-from apis.airports_api import Airport, AirportNotFoundError, AirportsAPI
-from apis.flights_api import Direction
+from airports_agent.apis.airports_api import Airport, AirportNotFoundError, AirportsAPI
+from airports_agent.apis.flights_api import Direction
 from airports_agent.analytics.airport_analyzer import AirportAnalyzer
 from airports_agent.analytics.reports import (
     CapacityReport,
@@ -60,14 +60,6 @@ def get_airports_by_region(region: Union[str, List[str]]) -> List[Airport]:
 
 
 @mcp.tool()
-def get_region_by_airport(airport_code: str) -> str:
-    """Return the ISO 3166-2 region code (e.g. "US-CA") an airport belongs to, given its ICAO
-    code.
-    """
-    return AirportsAPI().get_airport_by_code(airport_code).region
-
-
-@mcp.tool()
 def get_airport_info(airport_code: str) -> Airport:
     """Return full airport details (name, region, runway count, IATA code, municipality) for an
     ICAO airport code.
@@ -110,7 +102,7 @@ def get_airport_flights_count(
 
 
 @mcp.tool()
-def get_congestion_level(airport_code: str, last_n_days: Optional[int] = None) -> CongestionReport:
+def get_congestion_report(airport_code: str, last_n_days: Optional[int] = None) -> CongestionReport:
     """Assess how congested an airport is over a trailing window, relative to its runway
     capacity.
 

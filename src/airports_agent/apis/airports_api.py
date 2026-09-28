@@ -97,7 +97,7 @@ class AirportsAPI:
             airports.to_csv(AIRPORTS_FILE, index=False)
             return airports
         else:
-            response.raise_for_status()
+            print(f"UNSUCCESSFUL CALL FOR AIRPORTS API, status_code: {response.status_code}")
 
     def _get_runways(self) -> Optional[pd.DataFrame]:
         if self._is_up_to_date(RUNWAYS_FILE):
@@ -109,7 +109,7 @@ class AirportsAPI:
             runways.to_csv(RUNWAYS_FILE, index=False)
             return runways
         else:
-            response.raise_for_status()
+            print(f"UNSUCCESSFUL CALL FOR RUNWAYS API, status_code: {response.status_code}")
 
     def _is_up_to_date(self, path):
         if not path.exists():

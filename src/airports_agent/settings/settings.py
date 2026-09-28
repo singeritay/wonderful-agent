@@ -11,6 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 class CapacitySettings(BaseModel):
     flights_per_runway_per_hour: int = Field(gt=0)
+    practical_capacity_pct: float = Field(gt=0, le=100)
 
 
 class AnalysisSettings(BaseModel):
@@ -44,10 +45,6 @@ class LongHaulSettings(BaseModel):
     min_duration_hours: float = Field(gt=0)
 
 
-class UnmetDemandSettings(BaseModel):
-    practical_capacity_pct: float = Field(gt=0, le=100)
-
-
 class LlmSettings(BaseModel):
     model: str
 
@@ -58,7 +55,6 @@ class Settings(BaseModel):
     analysis: AnalysisSettings
     congestion_levels: CongestionLevelSettings
     long_haul: LongHaulSettings
-    unmet_demand: UnmetDemandSettings
     llm: LlmSettings
 
     @property

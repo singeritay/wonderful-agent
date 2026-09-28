@@ -2,7 +2,7 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta
 from typing import Dict, Iterable, List, Literal, Optional
 
-from apis.flights_api import Flight
+from airports_agent.apis.flights_api import Flight
 from airports_agent.settings.settings import CongestionLevelSettings
 
 CongestionLevel = Literal["low", "moderate", "high", "over_capacity", "unknown"]

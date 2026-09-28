@@ -2,6 +2,7 @@ data_dir: data
 
 capacity:
   flights_per_runway_per_hour: 20
+  practical_capacity_pct: 80
 
 analysis:
   window_days: 3
@@ -14,9 +15,6 @@ congestion_levels:
 
 long_haul:
   min_duration_hours: 5
-
-unmet_demand:
-  practical_capacity_pct: 85
 
 llm:
   model: gemini-3.5-flash-lite

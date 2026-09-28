@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 
-from apis.flights_api import Flight
+from airports_agent.apis.flights_api import Flight
 from airports_agent.analytics import metrics
 from airports_agent.settings.settings import CongestionLevelSettings
 

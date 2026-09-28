@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta, timezone
 from typing import List, Optional, Tuple, Union
 
-from apis.airports_api import Airport, AirportsAPI
-from apis.flights_api import Direction, Flight, FlightsAPI
+from airports_agent.apis.airports_api import Airport, AirportsAPI
+from airports_agent.apis.flights_api import Direction, Flight, FlightsAPI
 
 from airports_agent.analytics import metrics
 from airports_agent.analytics.reports import (
@@ -14,7 +14,7 @@ from airports_agent.settings.settings import Settings, load_settings
 
 BASE_ASSUMPTIONS = [
     "Flight counts come from OpenSky Network ADS-B data and may undercount actual traffic due to coverage gaps.",
-    "Runway capacity assumes 20 flights/runway/hour, a simplification that ignores runway configuration, weather, and ATC procedures.",
+    "Runway capacity assumes a fixed amount of flights (usually 20)/runway/hour, a simplification that ignores runway configuration, weather, and ATC procedures.",
     "Hours are bucketed in UTC, so 'per day' boundaries are UTC midnight, not local midnight.",
 ]
 
@@ -71,7 +71,7 @@ class AirportAnalyzer:
         capacity = metrics.capacity_per_hour(
             self.airport.num_of_runways, self._settings.capacity.flights_per_runway_per_hour
         )
-        practical_pct = self._settings.unmet_demand.practical_capacity_pct
+        practical_pct = self._settings.capacity.practical_capacity_pct
         practical_capacity = capacity * (practical_pct / 100) if capacity > 0 else None
 
         return CapacityReport(

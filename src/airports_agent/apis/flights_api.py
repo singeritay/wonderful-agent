@@ -43,16 +43,6 @@ class FlightsAPI:
     def get_arrivals(self, airport_icao: str, begin: datetime, end: datetime) -> List[Flight]:
         return self._get_flights(Direction.ARRIVALS, airport_icao, begin, end)
 
-    def get_recent_departures(self, airport_icao: str, days: int = 7) -> List[Flight]:
-        end = datetime.now(timezone.utc)
-        begin = end - timedelta(days=days)
-        return self.get_departures(airport_icao, begin, end)
-
-    def get_recent_arrivals(self, airport_icao: str, days: int = 7) -> List[Flight]:
-        end = datetime.now(timezone.utc)
-        begin = end - timedelta(days=days)
-        return self.get_arrivals(airport_icao, begin, end)
-
     def _get_flights(self, direction: Direction, airport_icao: str, begin: datetime, end: datetime) -> List[Flight]:
         flights = []
         for window_start, window_end in self._get_iter_windows(begin, end):
@@ -117,10 +107,3 @@ class FlightsAPI:
             departure_time=datetime.fromtimestamp(record.firstSeen, tz=timezone.utc),
             arrival_time=datetime.fromtimestamp(record.lastSeen, tz=timezone.utc),
         )
-
-
-
-if __name__ == "__main__":
-    api = FlightsAPI()
-    departures = api.get_recent_departures("KBOS")
-    print(f"Retrieved {len(departures)} departures from KBOS in the last week.")
