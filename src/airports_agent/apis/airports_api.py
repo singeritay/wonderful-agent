@@ -1,4 +1,5 @@
 import io
+import sys
 from datetime import date
 from typing import List, Optional, Union
 
@@ -14,6 +15,7 @@ REQUIRED_AIRPORT_TYPES = ("large_airport", "medium_airport")
 HELIPAD_RUNWAY_PREFIX = "H"
 AIRPORTS_COLUMNS = ["id", "ident", "type", "name", "iso_region", "iata_code", "municipality"]
 RUNWAYS_COLUMNS = ["id", "airport_ref", "airport_ident", "closed", "le_ident"]
+REQUEST_TIMEOUT_SECONDS = 30
 DATA_DIR = load_settings().data_dir_path
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 AIRPORTS_FILE = DATA_DIR / "airports.csv"
@@ -83,33 +85,44 @@ class AirportsAPI:
             | airports["municipality"].astype(str).str.contains(query, case=False, regex=False, na=False)
         ]
 
-    def _get_airports(self) -> Optional[pd.DataFrame]:
+    def _get_airports(self) -> pd.DataFrame:
         if self._is_up_to_date(AIRPORTS_FILE):
             return pd.read_csv(AIRPORTS_FILE)
 
-        response = requests.get(f"{self.base_url}/{AIRPORTS_FILE.name}")
-        if response.status_code == 200:
-            airports = pd.read_csv(io.StringIO(response.text))
-            airports = airports[
-                airports["type"].isin(REQUIRED_AIRPORT_TYPES)
-                & (airports["iso_country"] == UNITED_STATES_COUNTRY_CODE)
-            ][AIRPORTS_COLUMNS]
-            airports.to_csv(AIRPORTS_FILE, index=False)
-            return airports
-        else:
-            print(f"UNSUCCESSFUL CALL FOR AIRPORTS API, status_code: {response.status_code}")
+        text = self._fetch_csv_text(AIRPORTS_FILE.name)
+        if text is None:
+            return pd.DataFrame(columns=AIRPORTS_COLUMNS)
 
-    def _get_runways(self) -> Optional[pd.DataFrame]:
+        airports = pd.read_csv(io.StringIO(text))
+        airports = airports[
+            airports["type"].isin(REQUIRED_AIRPORT_TYPES)
+            & (airports["iso_country"] == UNITED_STATES_COUNTRY_CODE)
+        ][AIRPORTS_COLUMNS]
+        airports.to_csv(AIRPORTS_FILE, index=False)
+        return airports
+
+    def _get_runways(self) -> pd.DataFrame:
         if self._is_up_to_date(RUNWAYS_FILE):
             return pd.read_csv(RUNWAYS_FILE)
 
-        response = requests.get(f"{self.base_url}/{RUNWAYS_FILE.name}")
-        if response.status_code == 200:
-            runways = pd.read_csv(io.StringIO(response.text))[RUNWAYS_COLUMNS]
-            runways.to_csv(RUNWAYS_FILE, index=False)
-            return runways
-        else:
-            print(f"UNSUCCESSFUL CALL FOR RUNWAYS API, status_code: {response.status_code}")
+        text = self._fetch_csv_text(RUNWAYS_FILE.name)
+        if text is None:
+            return pd.DataFrame(columns=RUNWAYS_COLUMNS)
+
+        runways = pd.read_csv(io.StringIO(text))[RUNWAYS_COLUMNS]
+        runways.to_csv(RUNWAYS_FILE, index=False)
+        return runways
+
+    def _fetch_csv_text(self, file_name: str) -> Optional[str]:
+        try:
+            response = requests.get(f"{self.base_url}/{file_name}", timeout=REQUEST_TIMEOUT_SECONDS)
+        except requests.RequestException as e:
+            print(f"UNSUCCESSFUL CALL FOR {file_name}: {e}", file=sys.stderr)
+            return None
+        if response.status_code != 200:
+            print(f"UNSUCCESSFUL CALL FOR {file_name}, status_code: {response.status_code}", file=sys.stderr)
+            return None
+        return response.text
 
     def _is_up_to_date(self, path):
         if not path.exists():
@@ -135,10 +148,3 @@ class AirportsAPI:
             iata_code=None if pd.isna(row["iata_code"]) else str(row["iata_code"]),
             municipality=None if pd.isna(row["municipality"]) else str(row["municipality"]),
         )
-
-
-
-if __name__ == "__main__":
-    api = AirportsAPI()
-    us_airports = api.get_airports_per_region("US-CA")
-    print(us_airports)

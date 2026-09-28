@@ -162,10 +162,17 @@ def test_search_airports_blank_query(api, mock_get):
     assert api.search_airports("   ") == []
 
 
-def test_raises_on_non_200_response(api, monkeypatch):
-    error_response = make_response(status_code=500)
-    error_response.raise_for_status.side_effect = Exception("boom")
-    monkeypatch.setattr(airports_api_module.requests, "get", MagicMock(return_value=error_response))
+def test_non_200_response_returns_no_airports(api, monkeypatch):
+    monkeypatch.setattr(
+        airports_api_module.requests, "get", MagicMock(return_value=make_response(status_code=500))
+    )
 
-    with pytest.raises(Exception):
-        api.get_airport_by_code("KBOS")
+    assert api.search_airports("KBOS") == []
+    assert api.get_airports_per_region("US-MA") == []
+
+
+def test_network_error_returns_no_airports(api, monkeypatch):
+    offline = MagicMock(side_effect=airports_api_module.requests.ConnectionError("offline"))
+    monkeypatch.setattr(airports_api_module.requests, "get", offline)
+
+    assert api.search_airports("KBOS") == []

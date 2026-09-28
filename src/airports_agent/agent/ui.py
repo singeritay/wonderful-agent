@@ -13,7 +13,7 @@ from typing import Any, Dict, List, Tuple
 import streamlit as st
 from google.genai import types
 
-from airports_agent.agent.agent import AirportsAgent
+from airports_agent.agent.agent import NO_ANSWER_MESSAGE, AirportsAgent
 
 st.set_page_config(page_title="Airports Investment Agent", page_icon=":airplane:")
 st.title(":airplane: Airports Investment Agent")
@@ -33,8 +33,8 @@ async def _ask(
     user_message: str, history: List[types.Content]
 ) -> Tuple[str, List[types.Content], List[Dict[str, Any]]]:
     async with AirportsAgent(history=history) as agent:
-        response = await agent.ask(user_message)
-        return response.text, agent.chat.get_history(), agent.last_tool_calls
+        answer = await agent.ask(user_message)
+        return answer or NO_ANSWER_MESSAGE, agent.chat.get_history(), agent.last_tool_calls
 
 
 def _render_tool_calls(tool_calls: List[Dict[str, Any]]) -> None:
@@ -63,6 +63,7 @@ if user_message := st.chat_input("e.g. Which New England airports are strong exp
                     _ask(user_message, st.session_state.gemini_history)
                 )
             except Exception as e:
+                print(f"[ui] Agent turn failed: {e}")
                 text, tool_calls = f"Something went wrong: {e}", []
                 new_history = st.session_state.gemini_history
         st.markdown(text)

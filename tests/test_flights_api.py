@@ -77,6 +77,32 @@ def test_get_departures_handles_none_response(mock_opensky_api_cls):
 
 
 @patch("airports_agent.apis.flights_api.OpenSkyApi")
+def test_failed_call_is_not_cached_as_an_empty_day(mock_opensky_api_cls):
+    mock_opensky_api_cls.return_value.get_departures_by_airport.side_effect = [None, [make_flight_data()]]
+
+    api = FlightsAPI(client_id="id", client_secret="secret")
+    begin = datetime(2020, 1, 1, tzinfo=timezone.utc)
+    end = datetime(2020, 1, 2, tzinfo=timezone.utc)
+
+    assert api.get_departures("KBOS", begin, end) == []
+    assert len(api.get_departures("KBOS", begin, end)) == 1
+
+
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
+def test_get_departures_network_error_returns_empty(mock_opensky_api_cls):
+    mock_opensky_api_cls.return_value.get_departures_by_airport.side_effect = ConnectionError("offline")
+
+    api = FlightsAPI(client_id="id", client_secret="secret")
+    flights = api.get_departures(
+        "KBOS",
+        datetime(2026, 1, 1, tzinfo=timezone.utc),
+        datetime(2026, 1, 1, 1, tzinfo=timezone.utc),
+    )
+
+    assert flights == []
+
+
+@patch("airports_agent.apis.flights_api.OpenSkyApi")
 def test_get_departures_chunks_by_max_window(mock_opensky_api_cls):
     mock_opensky_api_cls.return_value.get_departures_by_airport.return_value = []
 

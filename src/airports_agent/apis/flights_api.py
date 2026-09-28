@@ -2,6 +2,7 @@ from datetime import datetime, time, timedelta, timezone
 from enum import Enum
 import json
 import os
+import sys
 from typing import List, Optional
 
 from dotenv import load_dotenv
@@ -57,6 +58,8 @@ class FlightsAPI:
             return [Flight.model_validate(item) for item in json.loads(cache_path.read_text())]
 
         records = self._fetch_records(direction, airport_icao, window_start, window_end)
+        if records is None:
+            return []
         flights = [self._to_flight(record) for record in records]
 
         if cache_path is not None:
@@ -67,16 +70,22 @@ class FlightsAPI:
 
     def _fetch_records(
         self, direction: Direction, airport_icao: str, window_start: datetime, window_end: datetime
-    ) -> List[FlightData]:
-        if direction is Direction.DEPARTURES:
-            records = self._api.get_departures_by_airport(
-                airport_icao, int(window_start.timestamp()), int(window_end.timestamp())
-            )
-        else:
-            records = self._api.get_arrivals_by_airport(
-                airport_icao, int(window_start.timestamp()), int(window_end.timestamp())
-            )
-        return records or []
+    ) -> Optional[List[FlightData]]:
+        # None means the call failed, so it isn't cached (OpenSky returns [] for a real empty day).
+        fetch = (
+            self._api.get_departures_by_airport
+            if direction is Direction.DEPARTURES
+            else self._api.get_arrivals_by_airport
+        )
+        call = f"OPENSKY {direction.value} for {airport_icao} on {window_start:%Y-%m-%d}"
+        try:
+            records = fetch(airport_icao, int(window_start.timestamp()), int(window_end.timestamp()))
+        except Exception as e:
+            print(f"UNSUCCESSFUL CALL FOR {call}: {e}", file=sys.stderr)
+            return None
+        if records is None:
+            print(f"UNSUCCESSFUL CALL FOR {call}", file=sys.stderr)
+        return records
 
     def _get_cache_path_for_window(
         self, direction: Direction, airport_icao: str, window_start: datetime, window_end: datetime
