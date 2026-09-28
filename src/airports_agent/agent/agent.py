@@ -2,7 +2,7 @@ import asyncio
 import sys
 from contextlib import AsyncExitStack
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 from google import genai
@@ -51,12 +51,13 @@ class AirportsAgent:
             print(agent.last_tool_calls)  # [{"name": ..., "args": ..., "result": ...}, ...]
     """
 
-    def __init__(self):
+    def __init__(self, history: Optional[List[types.Content]] = None):
         settings = load_settings()
         self._client = genai.Client()
         self._model = settings.llm.model
         self._exit_stack = AsyncExitStack()
         self._session: ClientSession = None
+        self._history = history
         self.chat = None
         self.last_tool_calls: List[Dict[str, Any]] = []
 
@@ -78,6 +79,7 @@ class AirportsAgent:
                 system_instruction=SYSTEM_PROMPT,
                 tools=[_mcp_tools_to_gemini_tool(mcp_tools)],
             ),
+            history=self._history,
         )
         return self
 
